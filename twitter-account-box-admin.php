@@ -30,9 +30,11 @@ class TwitterAccountBoxAdmin {
     if ( !current_user_can( 'manage_options' ) )  {
       wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
     }
-    echo '<div class="wrap">';
-    echo '<p>Hello Wordpress with version: '. $GLOBALS['wp_version'] .'.</p>';
-    echo '</div>';
+    ?>
+    <div class="wrap">
+    <p>Hello Wordpress with version: <?php echo $GLOBALS['wp_version']; ?></p>
+    </div>
+    <?php
   }
 }
 ?>
