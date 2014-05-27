@@ -43,49 +43,51 @@ License: GPL2
   register_deactivation_hook( __FILE__, array( 'TwitterAccountBox', 'plugin_deactivation' ) );
 
   add_action( 'init', array( 'TwitterAccountBox', 'init' ) );
+
   if ( is_admin() ) {
     require_once( TAB__PLUGIN_DIR . 'twitter-account-box-admin.php' );
     add_action( 'init', array( 'TwitterAccountBoxAdmin', 'init' ) );
   }
-?>
 
-<?php
 /**
  * Loads the Twitter Account Box plugin.
  *
  * @since 0.0.1
  */
-class TwitterAccountBox {
+if ( ! class_exists( 'TwitterAccountBox' ) ) {
+  class TwitterAccountBox {
 
-  private static $initiated = false;
+    private static $initiated = false;
 
-  public static function init() {
-    if ( ! self::$initiated ) {
-      self::init_hooks();
+    public static function init() {
+      if ( ! self::$initiated ) {
+        self::init_hooks();
+      }
     }
-  }
-  /**
-   * Initializes WordPress hooks
-   */
-  private static function init_hooks() {
-    self::$initiated = true;
-  }
-  /**
-   * Attached to activate_{ plugin_basename( __FILES__ ) } by register_activation_hook()
-   * @static
-   */
-  public static function plugin_activation() {
-    if ( version_compare( $GLOBALS['wp_version'], TAB__MINIMUM_WP_VERSION, '<' ) ) {
-      var_dump("PLUGIN ACTIVATION FAILED – wp_version <");
+    /**
+     * Initializes WordPress hooks
+     */
+    private static function init_hooks() {
+      self::$initiated = true;
     }
-  }
+    /**
+     * Attached to activate_{ plugin_basename( __FILES__ ) } by register_activation_hook()
+     * @static
+     */
+    public static function plugin_activation() {
+      if ( version_compare( $GLOBALS['wp_version'], TAB__MINIMUM_WP_VERSION, '<' ) ) {
+        var_dump("PLUGIN ACTIVATION FAILED – wp_version <");
+        wp_die( __( 'TwitterAccountBox requires WordPress '. TAB__MINIMUM_WP_VERSION .' or higher...' ) );
+      }
+    }
 
-  /**
-   * Removes all connection options
-   * @static
-   */
-  public static function plugin_deactivation( ) {
-    //tidy up
+    /**
+     * Removes all connection options
+     * @static
+     */
+    public static function plugin_deactivation( ) {
+      //tidy up
+    }
   }
 }
 ?>
