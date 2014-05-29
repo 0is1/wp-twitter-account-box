@@ -1,24 +1,32 @@
 <?php
-// Exit if accessed directly
-if ( !defined('ABSPATH')) exit;
+
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+  die;
+}
 
 /**
-* @file           twitter-account-box.php
+* Twitter Account Box.
+*
 * @package        Twitter Account Box
-* @author         Janne Saarela
+* @author         Janne Saarela <janne@jannejuhani.net>
+* @license        GPL-2.0+
+* @link           http://tab.jannejuhani.net
+* @copyright      2014 Janne Saarela
 */
 
 /*
-Plugin Name: Twitter Account Box
-Plugin URI: http://tab.jannejuhani.net
-Description: This plugin adds your Twitter account details box in your Wordpress site.
-Version: 0.0.1
-Author: Janne Saarela
-Author URI: http://www.jannejuhani.net/
-License: GPL2
+Plugin Name:  Twitter Account Box (TAB)
+Plugin URI:   http://tab.jannejuhani.net
+Description:  This plugin adds your Twitter account details box in your Wordpress site.
+Version:      0.0.1
+Author:       Janne Saarela
+Author URI:   http://www.jannejuhani.net/
+License:      GPL2
+License URI:  http://www.gnu.org/licenses/gpl-2.0.txt
 */
 
-/*  Copyright 2014 Janne Saarela  (email: janne@jannejuhani.net)
+/*  Copyright 2014 Janne Saarela
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as
@@ -38,56 +46,19 @@ License: GPL2
   define( 'TAB__MINIMUM_WP_VERSION', '3.0' );
   define( 'TAB__PLUGIN_URL', plugin_dir_url( __FILE__ ) );
   define( 'TAB__PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+  define( 'TAB__ADMIN_PANEL_NAME', 'twitter-account-box-admin');
+
+  require_once( TAB__PLUGIN_DIR . 'public/class-twitter-account-box.php' );
+  require_once( TAB__PLUGIN_DIR . 'public/class-twitter-account-box-widget.php' );
 
   register_activation_hook( __FILE__, array( 'TwitterAccountBox', 'plugin_activation' ) );
   register_deactivation_hook( __FILE__, array( 'TwitterAccountBox', 'plugin_deactivation' ) );
 
-  add_action( 'init', array( 'TwitterAccountBox', 'init' ) );
+  add_action( 'plugins_loaded', array( 'TwitterAccountBox', 'get_instance' ) );
 
   if ( is_admin() ) {
-    require_once( TAB__PLUGIN_DIR . 'twitter-account-box-admin.php' );
-    add_action( 'init', array( 'TwitterAccountBoxAdmin', 'init' ) );
+    require_once( TAB__PLUGIN_DIR . 'admin/class-twitter-account-box-admin.php' );
+    add_action( 'plugins_loaded', array( 'TwitterAccountBoxAdmin', 'get_instance' ) );
   }
 
-/**
- * Loads the Twitter Account Box plugin.
- *
- * @since 0.0.1
- */
-if ( ! class_exists( 'TwitterAccountBox' ) ) {
-  class TwitterAccountBox {
-
-    private static $initiated = false;
-
-    public static function init() {
-      if ( ! self::$initiated ) {
-        self::init_hooks();
-      }
-    }
-    /**
-     * Initializes WordPress hooks
-     */
-    private static function init_hooks() {
-      self::$initiated = true;
-    }
-    /**
-     * Attached to activate_{ plugin_basename( __FILES__ ) } by register_activation_hook()
-     * @static
-     */
-    public static function plugin_activation() {
-      if ( version_compare( $GLOBALS['wp_version'], TAB__MINIMUM_WP_VERSION, '<' ) ) {
-        var_dump("PLUGIN ACTIVATION FAILED – wp_version <");
-        wp_die( __( 'TwitterAccountBox requires WordPress '. TAB__MINIMUM_WP_VERSION .' or higher...' ) );
-      }
-    }
-
-    /**
-     * Removes all connection options
-     * @static
-     */
-    public static function plugin_deactivation( ) {
-      //tidy up
-    }
-  }
-}
 ?>
