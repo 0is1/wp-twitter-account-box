@@ -1,0 +1,12 @@
+.twitteraccountbox-options .pure-control-group label{
+  width: 25%;
+}
+.twitteraccountbox-options .pure-control-group input{
+  width: 40%;
+}
+.twitteraccountbox-options .pure-control-group input[type="checkbox"]{
+  width: auto;
+}
+.twitteraccountbox-options .redirect-url{
+  display: block;
+}
