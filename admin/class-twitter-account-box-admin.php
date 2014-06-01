@@ -11,17 +11,6 @@
 if ( ! class_exists( 'TwitterAccountBoxAdmin' ) ) {
   class TwitterAccountBoxAdmin {
 
-     /**
-     * @since    0.0.1
-     * @var      boolean
-     */
-    private static $initiated = false;
-    /**
-     * @since    0.0.1
-     * @var      string
-     */
-    // protected $plugin_slug = 'twitteraccountbox';
-
     /**
      * Instance of this class.
      * @since    0.0.1
@@ -45,7 +34,6 @@ if ( ! class_exists( 'TwitterAccountBoxAdmin' ) ) {
       $this->plugin_slug = $plugin->get_plugin_slug();
 
       add_action( 'admin_init', array( $this, 'twitteraccountbox_register_settings'));
-      // add_action( 'admin_menu', array('TwitterAccountBoxAdmin', 'admin_menu' ));
       add_action( 'admin_menu', array( $this, 'admin_menu' ) );
       add_action('admin_enqueue_scripts', array( $this, 'add_css' ));
     }
@@ -69,26 +57,19 @@ if ( ! class_exists( 'TwitterAccountBoxAdmin' ) ) {
      * @uses register_setting
      */
     public function twitteraccountbox_register_settings() {
-       // register_setting( 'twitteraccountbox_options', 'twitteraccountbox_options', array( $this,'twitteraccountbox_options_validate'));
-       register_setting( 'twitteraccountbox_options', 'consumer_key', array( $this,'twitteraccountbox_options_validate'));
-       register_setting( 'twitteraccountbox_options', 'consumer_secret', array( $this,'twitteraccountbox_options_validate'));
-       register_setting( 'twitteraccountbox_options', 'oauth_access_token', array( $this,'twitteraccountbox_options_validate'));
-       register_setting( 'twitteraccountbox_options', 'oauth_token_secret', array( $this,'twitteraccountbox_options_validate'));
-       register_setting( 'twitteraccountbox_options', 'enable_twitteraccountbox', array( $this,'twitteraccountbox_options_validate_activation'));
-       register_setting( 'twitteraccountbox_options', 'twitter_username', array( $this,'twitteraccountbox_options_validate'));
+       register_setting( 'twitteraccountbox_options', 'twitteraccountbox_consumer_key', array( $this,'twitteraccountbox_options_validate'));
+       register_setting( 'twitteraccountbox_options', 'twitteraccountbox_consumer_secret', array( $this,'twitteraccountbox_options_validate'));
+       register_setting( 'twitteraccountbox_options', 'twitteraccountbox_oauth_access_token', array( $this,'twitteraccountbox_options_validate'));
+       register_setting( 'twitteraccountbox_options', 'twitteraccountbox_oauth_token_secret', array( $this,'twitteraccountbox_options_validate'));
+       register_setting( 'twitteraccountbox_options', 'twitteraccountbox_twitter_username', array( $this,'twitteraccountbox_options_validate'));
     }
-    function twitteraccountbox_options_validate($options){
+    public function twitteraccountbox_options_validate($options){
+      // TODO
       $input_validated = $options;
       return $input_validated;
     }
-    function twitteraccountbox_options_validate_activation($options){
-      $input_validated = $options;
-      isset($options) ? $input_validated = true : $input_validated = false;
-      return $input_validated;
-    }
-    public function admin_menu() {
-     // $this->plugin_screen_hook_suffix = add_options_page( __('Twitter Account Box Options', $this->plugin_slug), __('Twitter Account Box', $this->plugin_slug), 'manage_options', basename( __FILE__ ), array( 'TwitterAccountBoxAdmin', 'display_page' ) );
 
+    public function admin_menu() {
      $this->plugin_screen_hook_suffix = add_options_page(
       __( 'Twitter Account Box Options', $this->plugin_slug ),
       __( 'Twitter Account Box', $this->plugin_slug ),
@@ -99,7 +80,7 @@ if ( ! class_exists( 'TwitterAccountBoxAdmin' ) ) {
     }
 
     public function add_css(){
-      wp_enqueue_style( 'twitteraccountbox_style', TAB__PLUGIN_URL . 'styles/twitteraccountbox.css', array(), TAB_VERSION, false);
+      wp_enqueue_style( 'twitteraccountbox_style', TAB__PLUGIN_URL . 'admin/assets/styles/twitteraccountbox.css', array(), TAB_VERSION, false);
     }
 
     public function display_page() {
@@ -116,28 +97,24 @@ if ( ! class_exists( 'TwitterAccountBoxAdmin' ) ) {
           <div class="twitter-app-settings">
             <h3><?php _e( 'Twitter-sovelluksen asetukset', 'twitteraccountbox' );?></h3>
             <div class="wrap pure-control-group">
-              <label for="consumer_key"><?php _e( 'Twitter Consumer Key:', $this->plugin_slug );?></label>
-              <input type="text" name="consumer_key" value="<?php echo get_option('consumer_key');?>"  />
+              <label for="twitteraccountbox_consumer_key"><?php _e( 'Twitter Consumer Key:', $this->plugin_slug );?></label>
+              <input type="text" name="twitteraccountbox_consumer_key" value="<?php echo get_option('twitteraccountbox_consumer_key');?>"  />
             </div>
             <div class="wrap pure-control-group">
-              <label for="consumer_secret"><?php _e( 'Twitter Consumer Secret:', 'twitteraccountbox' );?></label>
-              <input type="text" name="consumer_secret" value="<?php echo get_option('consumer_secret');?>"  />
+              <label for="twitteraccountbox_consumer_secret"><?php _e( 'Twitter Consumer Secret:', $this->plugin_slug );?></label>
+              <input type="text" name="twitteraccountbox_consumer_secret" value="<?php echo get_option('twitteraccountbox_consumer_secret');?>"  />
             </div>
             <div class="wrap pure-control-group">
-              <label for="oauth_access_token"><?php _e( 'Twitter OAuth Access Token:', 'twitteraccountbox' );?></label>
-              <input type="text" name="oauth_access_token" value="<?php echo get_option('oauth_access_token');?>"/>
+              <label for="twitteraccountbox_oauth_access_token"><?php _e( 'Twitter OAuth Access Token:', $this->plugin_slug );?></label>
+              <input type="text" name="twitteraccountbox_oauth_access_token" value="<?php echo get_option('twitteraccountbox_oauth_access_token');?>"/>
             </div>
             <div class="wrap pure-control-group">
-              <label for="oauth_token_secret"><?php _e( 'Twitter OAuth Access Token Secret:', 'twitteraccountbox' );?></label>
-              <input type="text" name="oauth_token_secret" value="<?php echo get_option('oauth_token_secret');?>"/>
+              <label for="twitteraccountbox_oauth_token_secret"><?php _e( 'Twitter OAuth Access Token Secret:', $this->plugin_slug );?></label>
+              <input type="text" name="twitteraccountbox_oauth_token_secret" value="<?php echo get_option('twitteraccountbox_oauth_token_secret');?>"/>
             </div>
             <div class="wrap pure-control-group">
-              <label for="enable_twitteraccountbox"><?php _e( 'Aktivoi Twitter Account Box', 'twitteraccountbox' );?></label>
-              <input type="checkbox" name="enable_twitteraccountbox" value="<?php echo get_option('enable_twitteraccountbox');?>" <?php if(get_option('enable_twitteraccountbox')) echo "checked=checked";?>  />
-            </div>
-            <div class="wrap pure-control-group">
-              <label for="twitter_username"><?php _e( 'Twitter käyttäjätunnus:', 'twitteraccountbox' );?></label>
-              <input type="text" name="twitter_username" value="<?php echo get_option('twitter_username');?>" />
+              <label for="twitteraccountbox_twitter_username"><?php _e( 'Twitter käyttäjätunnus:', $this->plugin_slug );?></label>
+              <input type="text" name="twitteraccountbox_twitter_username" value="<?php echo get_option('twitteraccountbox_twitter_username');?>" />
             </div>
           </div>
           <?php submit_button();?>
