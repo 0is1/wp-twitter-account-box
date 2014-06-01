@@ -50,11 +50,13 @@ License URI:  http://www.gnu.org/licenses/gpl-2.0.txt
 
   require_once( TAB__PLUGIN_DIR . 'public/class-twitter-account-box.php' );
   require_once( TAB__PLUGIN_DIR . 'public/class-twitter-account-box-widget.php' );
+  require_once( TAB__PLUGIN_DIR . 'includes/class-create-twitter-box.php');
 
   register_activation_hook( __FILE__, array( 'TwitterAccountBox', 'plugin_activation' ) );
   register_deactivation_hook( __FILE__, array( 'TwitterAccountBox', 'plugin_deactivation' ) );
 
   add_action( 'plugins_loaded', array( 'TwitterAccountBox', 'get_instance' ) );
+
 
   if ( is_admin() ) {
     require_once( TAB__PLUGIN_DIR . 'admin/class-twitter-account-box-admin.php' );

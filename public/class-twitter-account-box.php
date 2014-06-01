@@ -17,7 +17,6 @@
 if ( ! class_exists( 'TwitterAccountBox' ) ) {
   class TwitterAccountBox {
 
-    private static $initiated = false;
     /**
      * @since    0.0.1
      * @var      string
@@ -38,7 +37,7 @@ if ( ! class_exists( 'TwitterAccountBox' ) ) {
      * @since     0.0.1
      */
     private function __construct() {
-
+      // TODO
       // Load plugin text domain
       // add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
 
