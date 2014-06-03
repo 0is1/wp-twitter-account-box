@@ -74,6 +74,7 @@ if ( ! class_exists( 'TwitterAccountBoxWidget' ) ) {
     <div class="tba">
       <?php
         echo $this->createTwitterAccountBox->get_tab_content();
+        var_dump(get_transient('twitteraccountbox_transient'));
       ?>
     </div>
 

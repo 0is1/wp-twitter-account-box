@@ -26,12 +26,6 @@ if ( ! class_exists( 'CreateTwitterAccountBox' ) ) {
     private function __construct() {
       $plugin = TwitterAccountBox::get_instance();
       $this->plugin_slug = $plugin->get_plugin_slug();
-
-      $this->twitter_consumer_key = get_option('twitteraccountbox_consumer_key');
-      $this->twitter_consumer_secret = get_option('twitteraccountbox_consumer_secret');
-      $this->twitter_oauth_access_token = get_option('twitteraccountbox_oauth_access_token');
-      $this->twitter_oauth_token_secret = get_option('twitteraccountbox_oauth_token_secret');
-      $this->twitter_username = get_option('twitteraccountbox_twitter_username');
     }
    /**
    * Return an instance of this class.
@@ -51,11 +45,13 @@ if ( ! class_exists( 'CreateTwitterAccountBox' ) ) {
    * @return   string
    */
   public function get_tab_content() {
-    $data = get_transient('twitteraccountbox_transient');
+    if (!get_transient('twitteraccountbox_transient')) {
+      $this->create_tab_content();
+    }
+    $d = get_transient('twitteraccountbox_transient');
     $return = '<div class="twitter-page fleft pure-u">
     <section class="in-twitter header">
-      <h1>'. $data .'</h1>
-      <p>'.$this->twitter_username.'</p>
+      <p>'.$d[0]["user"]["name"].'</p>
     </section></div>';
     return $return;
   }
@@ -67,13 +63,10 @@ if ( ! class_exists( 'CreateTwitterAccountBox' ) ) {
   public function create_tab_content() {
     require_once( TAB__PLUGIN_DIR . 'includes/class-tab-get-twitter-data.php');
     $tabGetTwitterData = TabGetTwitterData::get_instance();
-    // return get_transient('twitteraccountbox_transient');
+    $tabGetTwitterData::init();
   }
   private function createContent(){
     // TODO: Clear this mess
-    if (!get_transient('twitteraccountbox_transient')) {
-      call_user_func('twitteraccountbox_transient');
-    }
     $data = get_transient('twitteraccountbox_transient');
     if (gettype($data) !== 'NULL') :
 

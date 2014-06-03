@@ -23,7 +23,15 @@ if ( ! class_exists( 'TabGetTwitterData' ) ) {
      */
     protected static $instance = null;
 
+    /**
+     * Twitter options for authentication.
+     * @since    0.0.1
+     * @var      array
+     */
+    protected static $options;
+
     private function __construct() {
+      self::init();
       self::create_twitteraccountbox_transient();
     }
 
@@ -39,33 +47,52 @@ if ( ! class_exists( 'TabGetTwitterData' ) ) {
       }
       return self::$instance;
     }
+    /**
+     * Set Twitter authentication variables
+     * @since     0.0.1
+     * @var       array
+     */
+    public static function init(){
+      $data = get_option('twitteraccountbox_options');
+      self::$options = array(
+        'twitter_consumer_key' => $data['consumer_key'],
+        'twitter_consumer_secret' => $data['consumer_secret'],
+        'twitter_oauth_access_token' => $data['oauth_access_token'],
+        'twitter_oauth_token_secret' => $data['oauth_token_secret'],
+        'twitter_username' => $data['twitter_username']
+        );
+    }
 
     private static function get_twitter_data(){
-      // require_once( TAB__PLUGIN_DIR . 'includes/vendor/twitter-api-php/TwitterAPIExchange.php');
-      $all_data = get_option('twitteraccountbox_options');
-      return $all_data;
+      self::init();
+      require_once( TAB__PLUGIN_DIR . 'includes/vendor/twitter-api-php/TwitterAPIExchange.php');
+      // var_dump("get_twitter_data");
+      // echo '<pre>';
+      // print_r(self::$options);
+      // echo '</pre>';
 
-      // $settings = array(
-      //   'oauth_access_token' => $theme_settings['twitter_oauth_access_token'],
-      //   'oauth_access_token_secret' => $theme_settings['twitter_oauth_access_token_secret'],
-      //   'consumer_key' => $theme_settings['twitter_consumer_key'],
-      //   'consumer_secret' => $theme_settings['twitter_consumer_secret']
-      // );
-      // $url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
-      // $getfield = '?screen_name='.$theme_settings['twitter_username'].'&count='.$theme_settings['twitter_visible_posts_count'];
-      // $requestMethod = 'GET';
+      $settings = array(
+        'oauth_access_token' => self::$options['twitter_oauth_access_token'],
+        'oauth_access_token_secret' => self::$options['twitter_oauth_token_secret'],
+        'consumer_key' => self::$options['twitter_consumer_key'],
+        'consumer_secret' => self::$options['twitter_consumer_secret']
+      );
+      $url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
+      $getfield = '?screen_name='.self::$options['twitter_username'].'&count=1';
+      $requestMethod = 'GET';
 
-      // try {
-      //   $twitter = new TwitterAPIExchange($settings);
-      //   $twitter_raw_data = $twitter->setGetfield($getfield)
-      //              ->buildOauth($url, $requestMethod)
-      //              ->performRequest();
-      //   return json_decode($twitter_raw_data, true);
-      // } catch (Exception $e) {
-      //   error_log(date('j.n.Y H:i:s'). " : ", 3, get_stylesheet_directory() .'/logs/twitter-errors.log');
-      //   error_log($e.PHP_EOL, 3, get_stylesheet_directory() .'/logs/twitter-errors.log');
-      //   error_log("-----".PHP_EOL, 3, get_stylesheet_directory() .'/logs/twitter-errors.log');
-      // }
+      try {
+        $twitter = new TwitterAPIExchange($settings);
+        $twitter_raw_data = $twitter->setGetfield($getfield)
+                   ->buildOauth($url, $requestMethod)
+                   ->performRequest();
+        return json_decode($twitter_raw_data, true);
+      } catch (Exception $e) {
+        echo '<pre>'.var_dump($e).'</pre>';
+        // error_log(date('j.n.Y H:i:s'). " : ", 3, get_stylesheet_directory() .'/logs/twitter-errors.log');
+        // error_log($e.PHP_EOL, 3, get_stylesheet_directory() .'/logs/twitter-errors.log');
+        // error_log("-----".PHP_EOL, 3, get_stylesheet_directory() .'/logs/twitter-errors.log');
+      }
     }
 
     /**
