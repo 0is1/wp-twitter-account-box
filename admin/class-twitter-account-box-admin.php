@@ -26,6 +26,15 @@ if ( ! class_exists( 'TwitterAccountBoxAdmin' ) ) {
      */
     protected $plugin_screen_hook_suffix = null;
 
+    /**
+     * Slug of the plugin screen.
+     *
+     * @since    1.0.0
+     *
+     * @var      mixed
+     */
+    protected static $twitteraccountbox_options = null;
+
 
     private function __construct() {
 
@@ -60,10 +69,24 @@ if ( ! class_exists( 'TwitterAccountBoxAdmin' ) ) {
     }
 
     public function twitteraccountbox_options_validate($options){
+
       // TODO
-      $input_validated = $options;
+      $input_validated = array();
+
+      isset( $options['consumer_key'] ) ? $input_validated['consumer_key'] = $options['consumer_key'] : $options['consumer_key'] = "";
+
+      isset( $options['consumer_secret'] ) ? $input_validated['consumer_secret'] = $options['consumer_secret'] : $options['consumer_secret'] = "";
+
+      isset( $options['oauth_access_token'] ) ? $input_validated['oauth_access_token'] = $options['oauth_access_token'] : $options['oauth_access_token'] = "";
+
+      isset( $options['oauth_token_secret'] ) ? $input_validated['oauth_token_secret'] = $options['oauth_token_secret'] : $options['oauth_token_secret'] = "";
+
+      isset( $options['twitter_username'] ) ? $input_validated['twitter_username'] = $options['twitter_username'] : $options['twitter_username'] = "";
+
       delete_transient('twitteraccountbox_transient');
+
       return $input_validated;
+
     }
 
     public function admin_menu() {
@@ -85,7 +108,15 @@ if ( ! class_exists( 'TwitterAccountBoxAdmin' ) ) {
       $createTwitterAccountBox->create_tab_content();
       if(!get_transient('twitteraccountbox_transient')){
         var_dump("NO TRANSIENT");
-      } else var_dump(get_transient('twitteraccountbox_transient'));
+      }
+      else {
+        echo '<pre>'.print_r(get_transient('twitteraccountbox_transient')).'</pre>';
+      }
+    }
+
+    private static function get_input_value($id){
+      if(isset(self::$twitteraccountbox_options[$id])) return self::$twitteraccountbox_options[$id];
+      else return "";
     }
 
     public function display_page() {
@@ -104,29 +135,32 @@ if ( ! class_exists( 'TwitterAccountBoxAdmin' ) ) {
         <?php
           settings_fields('twitteraccountbox_options');
           do_settings_sections('twitteraccountbox_options');
-          $all_data = get_option('twitteraccountbox_options');
+          self::$twitteraccountbox_options = get_option('twitteraccountbox_options');
+          echo '<pre>';
+          print_r(self::$twitteraccountbox_options);
+          echo '</pre>';
         ?>
           <div class="twitter-app-settings">
             <h3><?php _e( 'Twitter-sovelluksen asetukset', 'twitteraccountbox' );?></h3>
             <div class="wrap pure-control-group">
               <label for="twitteraccountbox_options[consumer_key]"><?php _e( 'Twitter Consumer Key:', $this->plugin_slug );?></label>
-              <input type="text" name="twitteraccountbox_options[consumer_key]" value="<?php echo $all_data['consumer_key'];?>"  />
+              <input type="text" name="twitteraccountbox_options[consumer_key]" value="<?php echo self::get_input_value('consumer_key'); ?>"  />
             </div>
             <div class="wrap pure-control-group">
               <label for="twitteraccountbox_options[consumer_secret]"><?php _e( 'Twitter Consumer Secret:', $this->plugin_slug );?></label>
-              <input type="text" name="twitteraccountbox_options[consumer_secret]" value="<?php echo $all_data['consumer_secret'];?>"  />
+              <input type="text" name="twitteraccountbox_options[consumer_secret]" value="<?php echo self::get_input_value('consumer_secret');?>"  />
             </div>
             <div class="wrap pure-control-group">
               <label for="twitteraccountbox_options[oauth_access_token]"><?php _e( 'Twitter OAuth Access Token:', $this->plugin_slug );?></label>
-              <input type="text" name="twitteraccountbox_options[oauth_access_token]" value="<?php echo $all_data['oauth_access_token'];?>"/>
+              <input type="text" name="twitteraccountbox_options[oauth_access_token]" value="<?php echo self::get_input_value('oauth_access_token');?>"/>
             </div>
             <div class="wrap pure-control-group">
               <label for="twitteraccountbox_options[auth_token_secret]"><?php _e( 'Twitter OAuth Access Token Secret:', $this->plugin_slug );?></label>
-              <input type="text" name="twitteraccountbox_options[oauth_token_secret]" value="<?php echo $all_data['oauth_token_secret'];?>"/>
+              <input type="text" name="twitteraccountbox_options[oauth_token_secret]" value="<?php echo self::get_input_value('oauth_token_secret');?>"/>
             </div>
             <div class="wrap pure-control-group">
               <label for="twitteraccountbox_options[twitter_username]"><?php _e( 'Twitter käyttäjätunnus:', $this->plugin_slug );?></label>
-              <input type="text" name="twitteraccountbox_options[twitter_username]" value="<?php echo $all_data['twitter_username'];?>" />
+              <input type="text" name="twitteraccountbox_options[twitter_username]" value="<?php echo self::get_input_value('twitter_username');?>" />
             </div>
           </div>
           <?php submit_button();?>
