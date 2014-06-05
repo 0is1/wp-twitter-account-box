@@ -47,6 +47,16 @@ if ( ! class_exists( 'TabGetTwitterData' ) ) {
       }
       return self::$instance;
     }
+
+    /**
+     * Return Twitter username.
+     * @since     0.0.1
+     * @return    string
+     */
+    public static function get_twitter_username() {
+      return self::$options['twitter_username'];
+    }
+
     /**
      * Set Twitter authentication variables
      * @since     0.0.1
@@ -66,7 +76,6 @@ if ( ! class_exists( 'TabGetTwitterData' ) ) {
     private static function get_twitter_data(){
       self::init();
       require_once( TAB__PLUGIN_DIR . 'includes/vendor/twitter-api-php/TwitterAPIExchange.php');
-      // var_dump("get_twitter_data");
       // echo '<pre>';
       // print_r(self::$options);
       // echo '</pre>';
@@ -77,7 +86,7 @@ if ( ! class_exists( 'TabGetTwitterData' ) ) {
         'consumer_key' => self::$options['twitter_consumer_key'],
         'consumer_secret' => self::$options['twitter_consumer_secret']
       );
-      $url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
+      $url = TAB__TWITTER_API_URL;
       $getfield = '?screen_name='.self::$options['twitter_username'].'&count=1';
       $requestMethod = 'GET';
 
