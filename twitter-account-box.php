@@ -42,11 +42,15 @@ License URI:  http://www.gnu.org/licenses/gpl-2.0.txt
 */
 ?>
 <?php
-  define( 'TAB_VERSION', '0.0.1' );
+  define( 'TAB__VERSION', '0.0.1' );
   define( 'TAB__MINIMUM_WP_VERSION', '3.0' );
   define( 'TAB__PLUGIN_URL', plugin_dir_url( __FILE__ ) );
   define( 'TAB__PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
   define( 'TAB__ADMIN_PANEL_NAME', 'twitter-account-box-admin');
+  define( 'TAB__TWITTER_DEV_SITE', 'https://dev.twitter.com/');
+  define( 'TAB__TWITTER_API_URL', 'https://api.twitter.com/1.1/statuses/user_timeline.json');
+  define( 'TAB__TWITTER_BASE_URL', 'https://twitter.com/');
+
 
   require_once( TAB__PLUGIN_DIR . 'public/class-twitter-account-box.php' );
   require_once( TAB__PLUGIN_DIR . 'public/class-twitter-account-box-widget.php' );

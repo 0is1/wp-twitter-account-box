@@ -105,7 +105,7 @@ if ( ! class_exists( 'TwitterAccountBox' ) ) {
      * @since    0.0.1
      */
     public function enqueue_styles() {
-      wp_enqueue_style( $this->plugin_slug . '-plugin-styles', plugins_url( 'assets/css/public.css', __FILE__ ), array(), TAB_VERSION );
+      wp_enqueue_style( $this->plugin_slug . '-plugin-styles', plugins_url( 'assets/css/public.css', __FILE__ ), array(), TAB__VERSION );
     }
 
     /**
@@ -114,7 +114,7 @@ if ( ! class_exists( 'TwitterAccountBox' ) ) {
      * @since    0.0.1
      */
     public function enqueue_scripts() {
-      wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'assets/js/public.js', __FILE__ ), array( 'jquery' ), TAB_VERSION );
+      wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'assets/js/public.js', __FILE__ ), array( 'jquery' ), TAB__VERSION );
     }
   }
 }
