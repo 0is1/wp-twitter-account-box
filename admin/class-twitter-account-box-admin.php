@@ -68,24 +68,36 @@ if ( ! class_exists( 'TwitterAccountBoxAdmin' ) ) {
       register_setting( 'twitteraccountbox_options', 'twitteraccountbox_options', array( $this,'twitteraccountbox_options_validate'));
     }
 
+    /**
+     * Return valitaded input data.
+     * @since     0.0.1
+     * @return    array
+     */
     public function twitteraccountbox_options_validate($options){
 
       // TODO
       $input_validated = array();
 
-      isset( $options['consumer_key'] ) ? $input_validated['consumer_key'] = $options['consumer_key'] : $options['consumer_key'] = "";
+      isset( $options['consumer_key'] ) ? $input_validated['consumer_key'] = trim($options['consumer_key']) : $options['consumer_key'] = "";
 
-      isset( $options['consumer_secret'] ) ? $input_validated['consumer_secret'] = $options['consumer_secret'] : $options['consumer_secret'] = "";
+      isset( $options['consumer_secret'] ) ? $input_validated['consumer_secret'] = trim($options['consumer_secret']) : $options['consumer_secret'] = "";
 
-      isset( $options['oauth_access_token'] ) ? $input_validated['oauth_access_token'] = $options['oauth_access_token'] : $options['oauth_access_token'] = "";
+      isset( $options['oauth_access_token'] ) ? $input_validated['oauth_access_token'] = trim($options['oauth_access_token']) : $options['oauth_access_token'] = "";
 
-      isset( $options['oauth_token_secret'] ) ? $input_validated['oauth_token_secret'] = $options['oauth_token_secret'] : $options['oauth_token_secret'] = "";
+      isset( $options['oauth_token_secret'] ) ? $input_validated['oauth_token_secret'] = trim($options['oauth_token_secret']) : $options['oauth_token_secret'] = "";
 
-      isset( $options['twitter_username'] ) ? $input_validated['twitter_username'] = $options['twitter_username'] : $options['twitter_username'] = "";
+      isset( $options['twitter_username'] ) ? $input_validated['twitter_username'] = preg_replace('/\s+/', '', $options['twitter_username']) : $options['twitter_username'] = "";
 
-      delete_transient('twitteraccountbox_transient');
-
+      self::delete_tab_transients();
       return $input_validated;
+
+    }
+    /**
+     * Delete Twitter Account Box transients.
+     * @since     0.0.1
+     */
+    private static function delete_tab_transients(){
+      delete_transient('twitteraccountbox_transient');
 
     }
 
@@ -100,7 +112,7 @@ if ( ! class_exists( 'TwitterAccountBoxAdmin' ) ) {
     }
 
     public function add_css(){
-      wp_enqueue_style( 'twitteraccountbox_style', TAB__PLUGIN_URL . 'admin/assets/styles/twitteraccountbox.css', array(), TAB_VERSION, false);
+      wp_enqueue_style( 'twitteraccountbox_style', TAB__PLUGIN_URL . 'admin/assets/styles/twitteraccountbox.css', array(), TAB__VERSION, false);
     }
 
     private static function init_twitter_data(){
@@ -141,6 +153,9 @@ if ( ! class_exists( 'TwitterAccountBoxAdmin' ) ) {
           echo '</pre>';
         ?>
           <div class="twitter-app-settings">
+            <section class="tab-twitter-info">
+              <p><?php _e('<a href="'.TAB__TWITTER_DEV_SITE.'">Hanki omat Twitter-kehittäjätunnukset</a>', $this->plugin_slug); ?> </p>
+            </section>
             <h3><?php _e( 'Twitter-sovelluksen asetukset', 'twitteraccountbox' );?></h3>
             <div class="wrap pure-control-group">
               <label for="twitteraccountbox_options[consumer_key]"><?php _e( 'Twitter Consumer Key:', $this->plugin_slug );?></label>
