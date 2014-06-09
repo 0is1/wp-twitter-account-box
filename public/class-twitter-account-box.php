@@ -42,7 +42,7 @@ if ( ! class_exists( 'TwitterAccountBox' ) ) {
       // add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
 
       // Load public-facing style sheet and JavaScript.
-      // add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
+      add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
       // add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
     }
 
@@ -105,7 +105,7 @@ if ( ! class_exists( 'TwitterAccountBox' ) ) {
      * @since    0.0.1
      */
     public function enqueue_styles() {
-      wp_enqueue_style( $this->plugin_slug . '-plugin-styles', plugins_url( 'assets/css/public.css', __FILE__ ), array(), TAB__VERSION );
+      wp_enqueue_style( $this->plugin_slug . '-plugin-styles', plugins_url( 'styles/twitteraccountbox.css', __FILE__ ), array(), TAB__VERSION );
     }
 
     /**

@@ -1,0 +1,91 @@
+#twitteraccountbox{
+  background-color:rgba(245,245,245,0.8);
+  max-width: 520px;
+}
+#twitteraccountbox .twitteraccountbox-error {
+  background-color: rgb(255, 255, 255);
+  color: rgb(200, 50, 50);
+  padding: 1rem;
+}
+
+#twitteraccountbox .in-twitter{
+  background-color: rgb(255, 255, 255);
+  border-bottom:1px solid rgba(0,0,0,0.1);
+  padding: 1rem 0.5rem;
+
+}
+#twitteraccountbox .in-twitter p{
+  font-size:80%;
+  font-weight:600;
+  margin:0;
+}
+#twitteraccountbox .twitter-user-details{
+  background-position:center;
+  background-size: cover;
+  color:#fff;
+  padding:.75rem;
+  position:relative;
+  text-align:center;
+  text-shadow:1px 1px 1px #141414;
+}
+#twitteraccountbox .twitter-user-details h1{
+  font-size: 1.25rem;
+}
+#twitteraccountbox .twitter-user-details h1,#twitteraccountbox .twitter-user-details a{
+  color: rgb(255, 255, 255);
+  line-height: 1;
+  margin: .5rem 0;
+}
+#twitteraccountbox .twitter-user-details a:hover{
+  text-decoration:underline;
+}
+#twitteraccountbox .twitter-user-details .twitteraccountbox-img{
+  float:none;
+  display:block;
+  margin:0 auto;
+}
+
+#twitteraccountbox .twitter-user-details .twitteraccountbox-img img{
+  border:2px solid rgb(232, 232, 232);
+}
+
+#twitteraccountbox .twitter-user-description, #twitteraccountbox .twitter-user-location{
+  font-size: .85rem;
+  margin: 0 0 .5rem;
+  text-align:center;
+}
+
+#twitteraccountbox .twitteraccountbox-details{
+  font-size:85%;
+  padding: .2rem 0;
+}
+
+#twitteraccountbox .twitteraccountbox-details ul,#twitteraccountbox .twitteraccountbox-details li{
+  display:inline-block;
+  margin: 0;
+  padding: 0;
+}
+#twitteraccountbox .twitteraccountbox-details li{
+  border-left:1px solid rgb(232, 232, 232);
+  padding:.25em .75em;
+}
+
+#twitteraccountbox .twitteraccountbox-details li:first-of-type{
+  border-left:none;
+}
+
+#twitteraccountbox .twitteraccountbox-details li span{
+  display:block;
+  font-size:80%;
+  text-transform:uppercase;
+}
+#twitteraccountbox .twitteraccountbox-details li a{
+  color:rgb(85, 85, 85);
+}
+#twitteraccountbox .twitteraccountbox-details li:hover a{
+  color:rgb(0, 172, 238);
+}
+#twitteraccountbox .twitteraccountbox-details .follow-button{
+  float:right;
+  margin:4px 4px 0;
+}
