@@ -70,13 +70,11 @@ if ( ! class_exists( 'TwitterAccountBoxWidget' ) ) {
         echo $args['after_title'];
       }
   ?>
-
-    <div class="tba">
-      <?php
-        echo $this->createTwitterAccountBox->get_tab_content();
-      ?>
+    <div id="twitteraccountbox">
+    <?php
+      echo $this->createTwitterAccountBox->get_tab_content();
+    ?>
     </div>
-
   <?php
       echo $args['after_widget'];
     }
