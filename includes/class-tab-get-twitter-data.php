@@ -16,6 +16,7 @@
  */
 if ( ! class_exists( 'TabGetTwitterData' ) ) {
   class TabGetTwitterData {
+
     /**
      * Instance of this class.
      * @since    0.0.1
@@ -30,9 +31,16 @@ if ( ! class_exists( 'TabGetTwitterData' ) ) {
      */
     protected static $options;
 
+    /**
+     * Error info.
+     * @since    0.0.1
+     * @var      array
+     */
+    protected static $error = [];
+
     private function __construct() {
-      self::init();
       self::create_twitteraccountbox_transient();
+      self::init();
     }
 
     /**
@@ -56,7 +64,22 @@ if ( ! class_exists( 'TabGetTwitterData' ) ) {
     public static function get_twitter_username() {
       return self::$options['twitter_username'];
     }
-
+    /**
+     * Return error status.
+     * @since     0.0.1
+     * @return    boolean
+     */
+    public static function check_error() {
+      return self::$error['error'];
+    }
+    /**
+     * Return error message.
+     * @since     0.0.1
+     * @return    string
+     */
+    public static function get_error_message() {
+      return self::$error['error_message'];
+    }
     /**
      * Set Twitter authentication variables
      * @since     0.0.1
@@ -71,14 +94,15 @@ if ( ! class_exists( 'TabGetTwitterData' ) ) {
         'twitter_oauth_token_secret' => $data['oauth_token_secret'],
         'twitter_username' => $data['twitter_username']
         );
+        self::$error = [
+          'error_message' => '',
+          'error' => false
+          ];
     }
 
     private static function get_twitter_data(){
       self::init();
       require_once( TAB__PLUGIN_DIR . 'includes/vendor/twitter-api-php/TwitterAPIExchange.php');
-      // echo '<pre>';
-      // print_r(self::$options);
-      // echo '</pre>';
 
       $settings = array(
         'oauth_access_token' => self::$options['twitter_oauth_access_token'],
@@ -97,10 +121,17 @@ if ( ! class_exists( 'TabGetTwitterData' ) ) {
                    ->performRequest();
         return json_decode($twitter_raw_data, true);
       } catch (Exception $e) {
-        echo '<pre>'.var_dump($e).'</pre>';
-        // error_log(date('j.n.Y H:i:s'). " : ", 3, get_stylesheet_directory() .'/logs/twitter-errors.log');
-        // error_log($e.PHP_EOL, 3, get_stylesheet_directory() .'/logs/twitter-errors.log');
-        // error_log("-----".PHP_EOL, 3, get_stylesheet_directory() .'/logs/twitter-errors.log');
+        var_dump($e);
+        if ($e->getMessage() === "Make sure you are passing in the correct parameters" ) {
+
+          self::$error = [
+            'error_message' => 'Make sure you are passing in the correct parameters in Twitter Account Box settings-page',
+            'error' => true
+          ];
+        }
+        error_log(date('j.n.Y H:i:s'). " : ", 3, TAB__PLUGIN_DIR .'/logs/twitteraccountbox-errors.log');
+        error_log($e.PHP_EOL, 3, TAB__PLUGIN_DIR .'/logs/twitteraccountbox-errors.log');
+        error_log("-----".PHP_EOL, 3, TAB__PLUGIN_DIR .'/logs/twitteraccountbox-errors.log');
       }
     }
 
@@ -110,7 +141,7 @@ if ( ! class_exists( 'TabGetTwitterData' ) ) {
      * @uses set_transient
      */
     private static function create_twitteraccountbox_transient() {
-      if(!get_transient('twitteraccountbox_transient')) {
+      if(!get_transient('twitteraccountbox_transient') || get_transient('twitteraccountbox_transient') === "") {
         $twitteraccountbox_transient = self::get_twitter_data();
         // Set 15 min cache
         set_transient('twitteraccountbox_transient', $twitteraccountbox_transient, 900);

@@ -34,7 +34,7 @@ if ( ! class_exists( 'CreateTwitterAccountBox' ) ) {
      * @since    0.0.1
      * @var      object
      */
-    protected static $tabGetTwitterData;
+    protected static $tabGetTwitterData = null;
 
     private function __construct() {
       $plugin = TwitterAccountBox::get_instance();
@@ -58,7 +58,7 @@ if ( ! class_exists( 'CreateTwitterAccountBox' ) ) {
    * @return   string
    */
   public function get_tab_content() {
-    if (!get_transient('twitteraccountbox_transient')) {
+    if (!get_transient('twitteraccountbox_transient') || null === self::$tabGetTwitterData) {
       $this->create_tab_content();
     }
     $return = $this->createContent();
@@ -72,13 +72,13 @@ if ( ! class_exists( 'CreateTwitterAccountBox' ) ) {
   public function create_tab_content() {
     require_once( TAB__PLUGIN_DIR . 'includes/class-tab-get-twitter-data.php');
     self::$tabGetTwitterData = TabGetTwitterData::get_instance();
-    self::$tabGetTwitterData->init();
   }
   public function createContent(){
-
-    // TODO: Clear this mess
     $data = get_transient('twitteraccountbox_transient');
-    if (gettype($data) !== 'NULL') :
+    if (self::$tabGetTwitterData->check_error()):
+      return "<p class='twitteraccountbox-error'>". self::$tabGetTwitterData->get_error_message() . "</p>";
+
+    elseif (gettype($data) !== 'NULL' && !self::$tabGetTwitterData->check_error()):
 
       // Get user Twitter profile image
       isset($data[0]["user"]["profile_image_url"]) ? self::$twitter_data['twitter_user_image'] = $data[0]["user"]["profile_image_url"] : self::$twitter_data['twitter_user_image'] = TAB__PLUGIN_URL . 'public/images/empty_image.png';
@@ -106,8 +106,6 @@ if ( ! class_exists( 'CreateTwitterAccountBox' ) ) {
       isset($data[0]["user"]["screen_name"]) ? self::$twitter_data['twitter_user_nick'] = $data[0]["user"]["screen_name"] : self::$twitter_data['twitter_user_nick'] = self::$tabGetTwitterData->get_twitter_username();
 
       self::$twitter_data['twitter_user_profile_link'] = TAB__TWITTER_BASE_URL . self::$twitter_data['twitter_user_nick']; ?>
-
-    <div class="twitter-page fleft pure-u">
       <section class="in-twitter header">
         <figure class="newsfeed-icon twitter-logo">
           <i class="icon-twitter-bird"></i>
@@ -115,7 +113,7 @@ if ( ! class_exists( 'CreateTwitterAccountBox' ) ) {
         <p><?php echo self::$twitter_data['twitter_user_real_name'];?><?php _e(' – Twitterissä', $this->plugin_slug); ?></p>
       </section>
       <section class="twitter-user-details" style="background-image: url(<?php echo self::$twitter_data['twitter_profile_banner_url'];?>);">
-        <figure class="newsfeed-icon-img twitter-page-img clearfix">
+        <figure class="newsfeed-icon-img twitteraccountbox-img clearfix">
         <img src="<?php echo self::$twitter_data['twitter_user_image'];?>" alt="<?php echo self::$twitter_data['twitter_user_real_name'];?>" title="<?php echo self::$twitter_data['twitter_user_real_name'];?>">
         </figure>
         <h1><?php echo self::$twitter_data['twitter_user_real_name']; ?></h1>
@@ -124,7 +122,7 @@ if ( ! class_exists( 'CreateTwitterAccountBox' ) ) {
         <p class="twitter-user-description"><?php echo self::$twitter_data['twitter_user_description'];?></p>
         <p class="twitter-user-location"><?php echo self::$twitter_data['twitter_user_location'];?> – <a href="<?php echo self::$twitter_data['twitter_user_url'];?>" title="<?php echo self::$twitter_data['twitter_user_url'];?>"><?php echo self::$twitter_data['twitter_user_url']; ?></a></p>
       </section>
-      <section class="twitter-page-details">
+      <section class="twitteraccountbox-details">
         <ul>
           <li>
             <a href="<?php echo self::$twitter_data['twitter_user_profile_link']; ?>" title="@<?php echo self::$twitter_data['twitter_user_nick'];?> – <?php _e('Twiittiä',$this->plugin_slug);?>">
@@ -146,9 +144,8 @@ if ( ! class_exists( 'CreateTwitterAccountBox' ) ) {
           <a href="<?php echo self::$twitter_data['twitter_user_profile_link'];?>" class="twitter-follow-button" data-show-count="false" data-lang="fi" data-size="large" data-show-screen-name="false"><?php _e('Seuraa @', $this->plugin_slug); ?><?php echo self::$twitter_data['twitter_user_nick'];?></a>
         </span>
       </section>
-    </div>
     <?php else : // If Twitter data isn't available ?>
-      <div class="twitter-page fleft pure-u">
+      <div class="twitteraccountbox fleft pure-u">
         <section class="twitter-feed-unavailable">
           <figure class="newsfeed-icon twitter-logo">
             <i class="icon-twitter-bird"></i>
