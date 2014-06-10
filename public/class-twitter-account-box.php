@@ -43,7 +43,8 @@ if ( ! class_exists( 'TwitterAccountBox' ) ) {
 
       // Load public-facing style sheet and JavaScript.
       add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
-      // add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+      add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ));
+      add_action( 'wp_loaded', array( $this, 'enqueue_vendor_scripts' ));
     }
 
     /**
@@ -114,7 +115,16 @@ if ( ! class_exists( 'TwitterAccountBox' ) ) {
      * @since    0.0.1
      */
     public function enqueue_scripts() {
-      wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'assets/js/public.js', __FILE__ ), array( 'jquery' ), TAB__VERSION );
+      // wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'js/twitter.js', __FILE__ ), array(), TAB__VERSION, true );
     }
+    /**
+     * Register and enqueue public-facing Twitter API JavaScript files.
+     *
+     * @since    0.0.1
+     */
+    public function enqueue_vendor_scripts() {
+      wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'js/twitter.js', __FILE__ ), array(), TAB__VERSION, true );
+    }
+
   }
 }
