@@ -118,12 +118,6 @@ if ( ! class_exists( 'TwitterAccountBoxAdmin' ) ) {
     private static function init_twitter_data(){
       $createTwitterAccountBox = CreateTwitterAccountBox::get_instance();
       $createTwitterAccountBox->create_tab_content();
-      if(!get_transient('twitteraccountbox_transient')){
-        var_dump("NO TRANSIENT");
-      }
-      else {
-        echo '<pre>'.print_r(get_transient('twitteraccountbox_transient')).'</pre>';
-      }
     }
 
     private static function get_input_value($id){
@@ -148,13 +142,13 @@ if ( ! class_exists( 'TwitterAccountBoxAdmin' ) ) {
           settings_fields('twitteraccountbox_options');
           do_settings_sections('twitteraccountbox_options');
           self::$twitteraccountbox_options = get_option('twitteraccountbox_options');
-          echo '<pre>';
-          print_r(self::$twitteraccountbox_options);
-          echo '</pre>';
+          // echo '<pre>';
+          // print_r(self::$twitteraccountbox_options);
+          // echo '</pre>';
         ?>
           <div class="twitter-app-settings">
             <section class="tab-twitter-info">
-              <p><?php _e('<a href="'.TAB__TWITTER_DEV_SITE.'">Hanki omat Twitter-kehittäjätunnukset</a>', $this->plugin_slug); ?> </p>
+              <p><?php _e('<a href="'.TAB__TWITTER_DEV_SITE.'">Hanki Twitter-kehittäjätunnukset</a>', $this->plugin_slug); ?> </p>
             </section>
             <h3><?php _e( 'Twitter-sovelluksen asetukset', 'twitteraccountbox' );?></h3>
             <div class="wrap pure-control-group">
