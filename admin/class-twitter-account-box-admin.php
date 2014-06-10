@@ -13,7 +13,7 @@ if ( ! class_exists( 'TwitterAccountBoxAdmin' ) ) {
 
     /**
      * Instance of this class.
-     * @since    0.0.1
+     * @since    0.1.0
      * @var      object
      */
     protected static $instance = null;
@@ -48,7 +48,7 @@ if ( ! class_exists( 'TwitterAccountBoxAdmin' ) ) {
 
     /**
      * Return an instance of this class.
-     * @since     0.0.1
+     * @since     0.1.0
      * @return    object    A single instance of this class.
      */
     public static function get_instance() {
@@ -70,7 +70,7 @@ if ( ! class_exists( 'TwitterAccountBoxAdmin' ) ) {
 
     /**
      * Return valitaded input data.
-     * @since     0.0.1
+     * @since     0.1.0
      * @return    array
      */
     public function twitteraccountbox_options_validate($options){
@@ -94,7 +94,7 @@ if ( ! class_exists( 'TwitterAccountBoxAdmin' ) ) {
     }
     /**
      * Delete Twitter Account Box transients.
-     * @since     0.0.1
+     * @since     0.1.0
      */
     private static function delete_tab_transients(){
       delete_transient('twitteraccountbox_transient');

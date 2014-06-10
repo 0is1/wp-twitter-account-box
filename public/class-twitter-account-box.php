@@ -12,20 +12,20 @@
 /**
  * Loads the Twitter Account Box plugin.
  *
- * @since 0.0.1
+ * @since 0.1.0
  */
 if ( ! class_exists( 'TwitterAccountBox' ) ) {
   class TwitterAccountBox {
 
     /**
-     * @since    0.0.1
+     * @since    0.1.0
      * @var      string
      */
     protected $plugin_slug = 'twitteraccountbox';
 
     /**
      * Instance of this class.
-     * @since    0.0.1
+     * @since    0.1.0
      * @var      object
      */
     protected static $instance = null;
@@ -34,7 +34,7 @@ if ( ! class_exists( 'TwitterAccountBox' ) ) {
      * Initialize the plugin by setting localization and loading public scripts
      * and styles.
      *
-     * @since     0.0.1
+     * @since     0.1.0
      */
     private function __construct() {
       // TODO
@@ -49,7 +49,7 @@ if ( ! class_exists( 'TwitterAccountBox' ) ) {
 
     /**
      * Return the plugin slug.
-     * @since    0.0.1
+     * @since    0.1.0
      * @return   Plugin slug variable.
      */
     public function get_plugin_slug() {
@@ -58,7 +58,7 @@ if ( ! class_exists( 'TwitterAccountBox' ) ) {
 
     /**
      * Return an instance of this class.
-     * @since     0.0.1
+     * @since     0.1.0
      * @return    object    A single instance of this class.
      */
     public static function get_instance() {
@@ -90,7 +90,7 @@ if ( ! class_exists( 'TwitterAccountBox' ) ) {
     /**
      * Load the plugin text domain for translation.
      *
-     * @since    0.0.1
+     * @since    0.1.0
      */
     public function load_plugin_textdomain() {
 
@@ -103,7 +103,7 @@ if ( ! class_exists( 'TwitterAccountBox' ) ) {
       /**
      * Register and enqueue public-facing style sheet.
      *
-     * @since    0.0.1
+     * @since    0.1.0
      */
     public function enqueue_styles() {
       wp_enqueue_style( $this->plugin_slug . '-plugin-styles', plugins_url( 'styles/twitteraccountbox.css', __FILE__ ), array(), TAB__VERSION );
@@ -112,7 +112,7 @@ if ( ! class_exists( 'TwitterAccountBox' ) ) {
     /**
      * Register and enqueues public-facing JavaScript files.
      *
-     * @since    0.0.1
+     * @since    0.1.0
      */
     public function enqueue_scripts() {
       // wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'js/twitter.js', __FILE__ ), array(), TAB__VERSION, true );
@@ -120,7 +120,7 @@ if ( ! class_exists( 'TwitterAccountBox' ) ) {
     /**
      * Register and enqueue public-facing Twitter API JavaScript files.
      *
-     * @since    0.0.1
+     * @since    0.1.0
      */
     public function enqueue_vendor_scripts() {
       wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'js/twitter.js', __FILE__ ), array(), TAB__VERSION, true );

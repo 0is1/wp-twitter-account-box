@@ -12,28 +12,28 @@
 /**
  * Get data from Twitter.
  *
- * @since 0.0.1
+ * @since 0.1.0
  */
 if ( ! class_exists( 'TabGetTwitterData' ) ) {
   class TabGetTwitterData {
 
     /**
      * Instance of this class.
-     * @since    0.0.1
+     * @since    0.1.0
      * @var      object
      */
     protected static $instance = null;
 
     /**
      * Twitter options for authentication.
-     * @since    0.0.1
+     * @since    0.1.0
      * @var      array
      */
     protected static $options;
 
     /**
      * Error info.
-     * @since    0.0.1
+     * @since    0.1.0
      * @var      array
      */
     protected static $error = [];
@@ -45,7 +45,7 @@ if ( ! class_exists( 'TabGetTwitterData' ) ) {
 
     /**
      * Return an instance of this class.
-     * @since     0.0.1
+     * @since     0.1.0
      * @return    object    A single instance of this class.
      */
     public static function get_instance() {
@@ -58,7 +58,7 @@ if ( ! class_exists( 'TabGetTwitterData' ) ) {
 
     /**
      * Return Twitter username.
-     * @since     0.0.1
+     * @since     0.1.0
      * @return    string
      */
     public static function get_twitter_username() {
@@ -66,7 +66,7 @@ if ( ! class_exists( 'TabGetTwitterData' ) ) {
     }
     /**
      * Return error status.
-     * @since     0.0.1
+     * @since     0.1.0
      * @return    boolean
      */
     public static function check_error() {
@@ -74,7 +74,7 @@ if ( ! class_exists( 'TabGetTwitterData' ) ) {
     }
     /**
      * Return error message.
-     * @since     0.0.1
+     * @since     0.1.0
      * @return    string
      */
     public static function get_error_message() {
@@ -82,7 +82,7 @@ if ( ! class_exists( 'TabGetTwitterData' ) ) {
     }
     /**
      * Set Twitter authentication variables
-     * @since     0.0.1
+     * @since     0.1.0
      * @var       array
      */
     public static function init(){

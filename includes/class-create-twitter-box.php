@@ -12,26 +12,26 @@
 /**
  * Creates the Twitter Account Box content.
  *
- * @since 0.0.1
+ * @since 0.1.0
  */
 if ( ! class_exists( 'CreateTwitterAccountBox' ) ) {
   class CreateTwitterAccountBox {
     /**
      * Instance of this class.
-     * @since    0.0.1
+     * @since    0.1.0
      * @var      object
      */
     protected static $instance = null;
 
     /**
      * Data from Twitter
-     * @since    0.0.1
+     * @since    0.1.0
      * @var      array
      */
     protected static $twitter_data;
       /**
      * TabGetTwitterData class instance
-     * @since    0.0.1
+     * @since    0.1.0
      * @var      object
      */
     protected static $tabGetTwitterData = null;
@@ -42,7 +42,7 @@ if ( ! class_exists( 'CreateTwitterAccountBox' ) ) {
     }
    /**
    * Return an instance of this class.
-   * @since     0.0.1
+   * @since     0.1.0
    * @return    object    A single instance of this class.
    */
   public static function get_instance() {
@@ -54,7 +54,7 @@ if ( ! class_exists( 'CreateTwitterAccountBox' ) ) {
   }
    /**
    * Return the TAB content
-   * @since    0.0.1
+   * @since    0.1.0
    * @return   string
    */
   public function get_tab_content() {
@@ -66,7 +66,7 @@ if ( ! class_exists( 'CreateTwitterAccountBox' ) ) {
   }
   /**
    * Create the TAB content
-   * @since    0.0.1
+   * @since    0.1.0
    * @return   boolean
    */
   public function create_tab_content() {
