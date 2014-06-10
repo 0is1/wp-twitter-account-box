@@ -102,7 +102,7 @@ if ( ! class_exists( 'TabGetTwitterData' ) ) {
 
     private static function get_twitter_data(){
       self::init();
-      require_once( TAB__PLUGIN_DIR . 'includes/vendor/twitter-api-php/TwitterAPIExchange.php');
+      require_once( TAB__PLUGIN_DIR . 'includes/vendor/twitter/TwitterAPIExchange.php');
 
       $settings = array(
         'oauth_access_token' => self::$options['twitter_oauth_access_token'],
