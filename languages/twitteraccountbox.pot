@@ -1,0 +1,113 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Twitter Account Box 0.1.0\n"
+"POT-Creation-Date: 2014-06-11 22:08+0200\n"
+"PO-Revision-Date: 2014-06-11 22:09+0200\n"
+"Last-Translator: Janne Saarela <janne@jannejuhani.net>\n"
+"Language-Team: Janne Saarela <janne@jannejuhani.net>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.5\n"
+"X-Poedit-Basepath: ../\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:106
+msgid "Twitter Account Box Options"
+msgstr ""
+
+#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:107
+msgid "Twitter Account Box"
+msgstr ""
+
+#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:130
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:151
+msgid "Get Twitter Developer-account"
+msgstr ""
+
+#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:153
+msgid "Twitter options"
+msgstr ""
+
+#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:155
+msgid "Twitter Consumer Key:"
+msgstr ""
+
+#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:159
+msgid "Twitter Consumer Secret:"
+msgstr ""
+
+#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:163
+msgid "Twitter OAuth Access Token:"
+msgstr ""
+
+#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:167
+msgid "Twitter OAuth Access Token Secret:"
+msgstr ""
+
+#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:171
+msgid "Twitter username:"
+msgstr ""
+
+#: ../twitter-account-box/includes/class-create-twitter-box.php:113
+msgid " – on Twitter"
+msgstr ""
+
+#: ../twitter-account-box/includes/class-create-twitter-box.php:128
+msgid "– Tweets"
+msgstr ""
+
+#: ../twitter-account-box/includes/class-create-twitter-box.php:129
+msgid "Tweets"
+msgstr ""
+
+#: ../twitter-account-box/includes/class-create-twitter-box.php:133
+msgid "– Following"
+msgstr ""
+
+#: ../twitter-account-box/includes/class-create-twitter-box.php:134
+msgid "Following"
+msgstr ""
+
+#: ../twitter-account-box/includes/class-create-twitter-box.php:138
+msgid "– Followers"
+msgstr ""
+
+#: ../twitter-account-box/includes/class-create-twitter-box.php:139
+msgid "Followers"
+msgstr ""
+
+#: ../twitter-account-box/includes/class-create-twitter-box.php:144
+msgid "Follow @"
+msgstr ""
+
+#: ../twitter-account-box/includes/class-create-twitter-box.php:153
+msgid "There's problems to retrieve data from Twitter at the moment..."
+msgstr ""
+
+#: ../twitter-account-box/public/class-twitter-account-box-widget.php:17
+msgid "Twitter Account Box Widget"
+msgstr ""
+
+#: ../twitter-account-box/public/class-twitter-account-box-widget.php:18
+msgid "Display your Twitter Account Box"
+msgstr ""
+
+#: ../twitter-account-box/public/class-twitter-account-box-widget.php:38
+msgid "Twitter"
+msgstr ""
+
+#: ../twitter-account-box/public/class-twitter-account-box.php:79
+msgid "TwitterAccountBox requires WordPress "
+msgstr ""
+
+#: ../twitter-account-box/public/class-twitter-account-box.php:79
+msgid " or higher..."
+msgstr ""

@@ -1,0 +1,122 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Twitter Account Box 0.1.0\n"
+"POT-Creation-Date: 2014-06-11 22:09+0200\n"
+"PO-Revision-Date: 2014-06-11 22:09+0200\n"
+"Last-Translator: Janne Saarela <janne@jannejuhani.net>\n"
+"Language-Team: Janne Saarela <janne@jannejuhani.net>\n"
+"Language: fi_FI\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.5\n"
+"X-Poedit-Basepath: ../\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:106
+msgid "Twitter Account Box Options"
+msgstr "Twitter Account Box Asetukset"
+
+#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:107
+msgid "Twitter Account Box"
+msgstr "Twitter Account Box"
+
+#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:130
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Sinulla ei ole tarvittavia oikeuksia tarkastella tätä sivua."
+
+#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:151
+msgid "Get Twitter Developer-account"
+msgstr "Hanki Twitterin kehittäjätunnukset"
+
+#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:153
+msgid "Twitter options"
+msgstr "Twitter Account Box Asetukset"
+
+#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:155
+msgid "Twitter Consumer Key:"
+msgstr "Twitter Consumer Key:"
+
+#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:159
+msgid "Twitter Consumer Secret:"
+msgstr "Twitter Consumer Secret:"
+
+#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:163
+msgid "Twitter OAuth Access Token:"
+msgstr "Twitter OAuth Access Token:"
+
+#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:167
+msgid "Twitter OAuth Access Token Secret:"
+msgstr "Twitter OAuth Access Token Secret:"
+
+#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:171
+msgid "Twitter username:"
+msgstr "Twitter käyttäjätunnus:"
+
+#: ../twitter-account-box/includes/class-create-twitter-box.php:113
+msgid " – on Twitter"
+msgstr " – Twitterissä"
+
+#: ../twitter-account-box/includes/class-create-twitter-box.php:128
+msgid "– Tweets"
+msgstr "– Twiittiä"
+
+#: ../twitter-account-box/includes/class-create-twitter-box.php:129
+msgid "Tweets"
+msgstr "Twiittiä"
+
+#: ../twitter-account-box/includes/class-create-twitter-box.php:133
+msgid "– Following"
+msgstr "– Seurattua"
+
+#: ../twitter-account-box/includes/class-create-twitter-box.php:134
+msgid "Following"
+msgstr "Seurattua"
+
+#: ../twitter-account-box/includes/class-create-twitter-box.php:138
+msgid "– Followers"
+msgstr "– Seuraajaa"
+
+#: ../twitter-account-box/includes/class-create-twitter-box.php:139
+msgid "Followers"
+msgstr "Seuraajaa"
+
+#: ../twitter-account-box/includes/class-create-twitter-box.php:144
+msgid "Follow @"
+msgstr "Seuraa @"
+
+#: ../twitter-account-box/includes/class-create-twitter-box.php:153
+msgid "There's problems to retrieve data from Twitter at the moment..."
+msgstr "Datan haussa Twitteristä on tällä hetkellä ongelmia..."
+
+#: ../twitter-account-box/public/class-twitter-account-box-widget.php:17
+msgid "Twitter Account Box Widget"
+msgstr "Twitter Account Box Vimpain"
+
+#: ../twitter-account-box/public/class-twitter-account-box-widget.php:18
+msgid "Display your Twitter Account Box"
+msgstr "Lisää Twitter account box sivustolle"
+
+#: ../twitter-account-box/public/class-twitter-account-box-widget.php:38
+msgid "Twitter"
+msgstr "Twitter"
+
+#: ../twitter-account-box/public/class-twitter-account-box.php:79
+msgid "TwitterAccountBox requires WordPress "
+msgstr "TwitterAccountBox vaatii WordPress-versiota "
+
+#: ../twitter-account-box/public/class-twitter-account-box.php:79
+msgid " or higher..."
+msgstr "tai uudempaa..."
+
+#~ msgid "Twiittiä"
+#~ msgstr "Twiittiä"
+
+#~ msgid "Seurattua"
+#~ msgstr "Seurattua"
+
+#~ msgid "Seuraajaa"
+#~ msgstr "Seuraajaa"
