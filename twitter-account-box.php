@@ -50,7 +50,7 @@ License URI:  http://www.gnu.org/licenses/gpl-2.0.txt
   define( 'TAB__TWITTER_DEV_SITE', 'https://dev.twitter.com/');
   define( 'TAB__TWITTER_API_URL', 'https://api.twitter.com/1.1/statuses/user_timeline.json');
   define( 'TAB__TWITTER_BASE_URL', 'https://twitter.com/');
-
+  define( 'TAB__SITE_LOCALE', get_locale() );
 
   require_once( TAB__PLUGIN_DIR . 'public/class-twitter-account-box.php' );
   require_once( TAB__PLUGIN_DIR . 'public/class-twitter-account-box-widget.php' );
