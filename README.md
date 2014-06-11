@@ -1,6 +1,6 @@
 # Twitter Account Box
 
-Plugin that adds your Twitter account details box in your Wordpress site.
+Plugin that adds your Twitter account details box in your Wordpress site via widget.
 
 ## Work in progress... but it's working!
 
