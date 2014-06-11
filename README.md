@@ -16,6 +16,6 @@ This plugin works already. But there's still things TODO:
 
 ## Did you notice a bug?
 * Please tell about it: janne [AT] jannejuhani.net
-* Or open an issue here in GitHub
+* Or open an issue here on GitHub
 
 Thanks!
