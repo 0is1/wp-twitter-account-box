@@ -12,6 +12,7 @@ This plugin works already. But there's still things TODO:
 * Better error handling
 * Documentation
 * Test with different WP-versions
+* Clean things up when uninstalling the plugin
 
 ## Did you notice a bug?
 * Please tell about it: janne [AT] jannejuhani.net
