@@ -39,7 +39,7 @@ if ( ! class_exists( 'TwitterAccountBox' ) ) {
     private function __construct() {
       // TODO
       // Load plugin text domain
-      // add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
+      add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
 
       // Load public-facing style sheet and JavaScript.
       add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
@@ -76,7 +76,7 @@ if ( ! class_exists( 'TwitterAccountBox' ) ) {
      */
     public static function plugin_activation() {
       if ( version_compare( $GLOBALS['wp_version'], TAB__MINIMUM_WP_VERSION, '<' ) ) {
-        wp_die( __( 'TwitterAccountBox requires WordPress '. TAB__MINIMUM_WP_VERSION .' or higher...' ) );
+        wp_die( __( 'TwitterAccountBox requires WordPress ', $this->plugin_slug) . TAB__MINIMUM_WP_VERSION . __(' or higher...', $this->plugin_slug));
       }
     }
     /**

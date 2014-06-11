@@ -148,9 +148,9 @@ if ( ! class_exists( 'TwitterAccountBoxAdmin' ) ) {
         ?>
           <div class="twitter-app-settings">
             <section class="tab-twitter-info">
-              <p><?php _e('<a href="'.TAB__TWITTER_DEV_SITE.'">Hanki Twitter-kehittäjätunnukset</a>', $this->plugin_slug); ?> </p>
+              <p><a href="<?php echo TAB__TWITTER_DEV_SITE;?>"><?php _e('Get Twitter Developer-account', $this->plugin_slug); ?></a></p>
             </section>
-            <h3><?php _e( 'Twitter-sovelluksen asetukset', 'twitteraccountbox' );?></h3>
+            <h3><?php _e( 'Twitter options', 'twitteraccountbox' );?></h3>
             <div class="wrap pure-control-group">
               <label for="twitteraccountbox_options[consumer_key]"><?php _e( 'Twitter Consumer Key:', $this->plugin_slug );?></label>
               <input type="text" name="twitteraccountbox_options[consumer_key]" value="<?php echo self::get_input_value('consumer_key'); ?>"  />
@@ -168,7 +168,7 @@ if ( ! class_exists( 'TwitterAccountBoxAdmin' ) ) {
               <input type="text" name="twitteraccountbox_options[oauth_token_secret]" value="<?php echo self::get_input_value('oauth_token_secret');?>"/>
             </div>
             <div class="wrap pure-control-group">
-              <label for="twitteraccountbox_options[twitter_username]"><?php _e( 'Twitter käyttäjätunnus:', $this->plugin_slug );?></label>
+              <label for="twitteraccountbox_options[twitter_username]"><?php _e( 'Twitter username:', $this->plugin_slug );?></label>
               <input type="text" name="twitteraccountbox_options[twitter_username]" value="<?php echo self::get_input_value('twitter_username');?>" />
             </div>
           </div>

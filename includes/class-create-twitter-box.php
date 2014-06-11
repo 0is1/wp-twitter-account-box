@@ -110,7 +110,7 @@ if ( ! class_exists( 'CreateTwitterAccountBox' ) ) {
         <figure class="newsfeed-icon twitter-logo">
           <i class="icon-twitter-bird"></i>
         </figure>
-        <p><?php echo self::$twitter_data['twitter_user_real_name'];?><?php _e(' – Twitterissä', $this->plugin_slug); ?></p>
+        <p><?php echo self::$twitter_data['twitter_user_real_name'];?><?php _e(' – on Twitter', $this->plugin_slug); ?></p>
       </section>
       <section class="twitter-user-details" style="background-image: url(<?php echo self::$twitter_data['twitter_profile_banner_url'];?>);">
         <figure class="newsfeed-icon-img twitteraccountbox-img clearfix">
@@ -125,23 +125,23 @@ if ( ! class_exists( 'CreateTwitterAccountBox' ) ) {
       <section class="twitteraccountbox-details">
         <ul>
           <li>
-            <a href="<?php echo self::$twitter_data['twitter_user_profile_link']; ?>" title="@<?php echo self::$twitter_data['twitter_user_nick'];?> – <?php _e('Twiittiä',$this->plugin_slug);?>">
-              <strong><?php echo self::$twitter_data['twitter_user_statuses_count'];?></strong><span><?php _e('Twiittiä', $this->plugin_slug); ?></span>
+            <a href="<?php echo self::$twitter_data['twitter_user_profile_link']; ?>" title="@<?php echo self::$twitter_data['twitter_user_nick'];?><?php _e('– Tweets',$this->plugin_slug);?>">
+              <strong><?php echo self::$twitter_data['twitter_user_statuses_count'];?></strong><span><?php _e('Tweets', $this->plugin_slug); ?></span>
             </a>
           </li>
           <li>
-            <a href="<?php echo self::$twitter_data['twitter_user_profile_link'];?>/following" title="@<?php echo self::$twitter_data['twitter_user_nick'];?> – <?php _e('Seurattua',$this->plugin_slug);?>">
-              <strong><?php echo self::$twitter_data['twitter_user_friends_count'];?></strong><span><?php _e('Seurattua', $this->plugin_slug); ?></span>
+            <a href="<?php echo self::$twitter_data['twitter_user_profile_link'];?>/following" title="@<?php echo self::$twitter_data['twitter_user_nick'];?><?php _e('– Following',$this->plugin_slug);?>">
+              <strong><?php echo self::$twitter_data['twitter_user_friends_count'];?></strong><span><?php _e('Following', $this->plugin_slug); ?></span>
             </a>
           </li>
           <li>
-            <a href="<?php echo self::$twitter_data['twitter_user_profile_link'];?>/followers" title="@<?php echo self::$twitter_data['twitter_user_nick'];?> – <?php _e('Seuraajaa',$this->plugin_slug);?>">
-              <strong><?php echo self::$twitter_data['twitter_user_followers_count'];?></strong><span><?php _e('Seuraajaa', $this->plugin_slug); ?></span>
+            <a href="<?php echo self::$twitter_data['twitter_user_profile_link'];?>/followers" title="@<?php echo self::$twitter_data['twitter_user_nick'];?><?php _e('– Followers',$this->plugin_slug);?>">
+              <strong><?php echo self::$twitter_data['twitter_user_followers_count'];?></strong><span><?php _e('Followers', $this->plugin_slug); ?></span>
             </a>
           </li>
         </ul>
         <span class="follow-button">
-          <a href="<?php echo self::$twitter_data['twitter_user_profile_link'];?>" class="twitter-follow-button" data-show-count="false" data-lang="fi" data-size="large" data-show-screen-name="false"><?php _e('Seuraa @', $this->plugin_slug); ?><?php echo self::$twitter_data['twitter_user_nick'];?></a>
+          <a href="<?php echo self::$twitter_data['twitter_user_profile_link'];?>" class="twitter-follow-button" data-show-count="false" data-lang="<?php echo TAB__SITE_LOCALE;?>" data-size="large" data-show-screen-name="false"><?php _e('Follow @', $this->plugin_slug); ?><?php echo self::$twitter_data['twitter_user_nick'];?></a>
         </span>
       </section>
     <?php else : // If Twitter data isn't available ?>
@@ -150,7 +150,7 @@ if ( ! class_exists( 'CreateTwitterAccountBox' ) ) {
           <figure class="newsfeed-icon twitter-logo">
             <i class="icon-twitter-bird"></i>
           </figure>
-          <p><?php _e('Datan haussa Twitteristä on tällä hetkellä ongelmia...', $this->plugin_slug); ?></p>
+          <p><?php _e("There's problems to retrieve data from Twitter at the moment...", $this->plugin_slug); ?></p>
         </section>
       </div>
     <?php endif;

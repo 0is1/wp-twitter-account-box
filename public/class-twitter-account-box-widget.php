@@ -15,7 +15,7 @@ if ( ! class_exists( 'TwitterAccountBoxWidget' ) ) {
       parent::__construct(
         'twitteraccountbox_widget',
         __( 'Twitter Account Box Widget' , 'twitteraccountbox'),
-        array( 'description' => __( 'Display your Twitter account box' , 'twitteraccountbox') )
+        array( 'description' => __( 'Display your Twitter Account Box' , 'twitteraccountbox') )
       );
       $plugin = TwitterAccountBox::get_instance();
       $this->plugin_slug = $plugin->get_plugin_slug();
