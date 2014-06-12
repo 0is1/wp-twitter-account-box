@@ -39,8 +39,8 @@ if ( ! class_exists( 'TabGetTwitterData' ) ) {
     protected static $error = [];
 
     private function __construct() {
-      self::create_twitteraccountbox_transient();
       self::init();
+      self::create_twitteraccountbox_transient();
     }
 
     /**
@@ -136,7 +136,6 @@ if ( ! class_exists( 'TabGetTwitterData' ) ) {
         error_log(date('j.n.Y H:i:s'). " : ", 3, TAB__PLUGIN_DIR .'/logs/twitteraccountbox-errors.log');
         error_log($e.PHP_EOL, 3, TAB__PLUGIN_DIR .'/logs/twitteraccountbox-errors.log');
         error_log("-----".PHP_EOL, 3, TAB__PLUGIN_DIR .'/logs/twitteraccountbox-errors.log');
-        return false;
       }
     }
 
