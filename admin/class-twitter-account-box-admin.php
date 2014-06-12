@@ -98,7 +98,6 @@ if ( ! class_exists( 'TwitterAccountBoxAdmin' ) ) {
      */
     private static function delete_tab_transients(){
       delete_transient('twitteraccountbox_transient');
-
     }
 
     public function admin_menu() {
