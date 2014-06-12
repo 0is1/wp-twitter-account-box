@@ -34,6 +34,15 @@ There's still things TODO:
 * Add Twitter username you want to show on your site
 * Save and go to Appearance -> Widgets, and add Twitter Account Box Widget to your Widget area
 
+== Screenshots ==
+...
+
+== Frequently Asked Questions ==
+
+= How I get Twitter Consumer Key etc.? =
+
+You can get those from [Twitter Development-site](https://dev.twitter.com/). Sign in or create new account, after login click "My applications" (up right dropdown), click "Create New App" and complete the process.
+
 == Debug ==
 
 Did you notice a bug?
@@ -41,6 +50,9 @@ Please tell about it: janne [AT] jannejuhani.net
 [Or open an issue on GitHub](https://github.com/0is1/wp-twitter-account-box)
 
 Thanks!
+
+== Upgrade Notice ==
+...
 
 == Changelog ==
 
