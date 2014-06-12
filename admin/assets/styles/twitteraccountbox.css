@@ -2,6 +2,7 @@
   width: 25%;
 }
 .twitteraccountbox-options .pure-control-group input{
+  display: block;
   width: 40%;
 }
 .twitteraccountbox-options .pure-control-group input[type="checkbox"]{
