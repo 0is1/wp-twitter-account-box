@@ -121,7 +121,6 @@ if ( ! class_exists( 'TabGetTwitterData' ) ) {
                    ->performRequest();
         return json_decode($twitter_raw_data, true);
       } catch (Exception $e) {
-        var_dump($e);
         if ($e->getMessage() === "Make sure you are passing in the correct parameters" ) {
 
           self::$error = [
