@@ -127,6 +127,11 @@ if ( ! class_exists( 'TabGetTwitterData' ) ) {
             'error_message' => 'Make sure you are passing in the correct parameters in Twitter Account Box settings-page',
             'error' => true
           ];
+        } else{
+          self::$error = [
+            'error_message' => 'Something went wrong, please try again later...',
+            'error' => true
+          ];
         }
         error_log(date('j.n.Y H:i:s'). " : ", 3, TAB__PLUGIN_DIR .'/logs/twitteraccountbox-errors.log');
         error_log($e.PHP_EOL, 3, TAB__PLUGIN_DIR .'/logs/twitteraccountbox-errors.log');
