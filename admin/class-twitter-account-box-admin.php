@@ -152,23 +152,23 @@ if ( ! class_exists( 'TwitterAccountBoxAdmin' ) ) {
             <h3><?php _e( 'Twitter options', 'twitteraccountbox' );?></h3>
             <div class="wrap pure-control-group">
               <label for="twitteraccountbox_options[consumer_key]"><?php _e( 'Twitter Consumer Key:', $this->plugin_slug );?></label>
-              <input type="text" name="twitteraccountbox_options[consumer_key]" value="<?php echo self::get_input_value('consumer_key'); ?>"  />
+              <input type="text" name="twitteraccountbox_options[consumer_key]" value="<?php echo self::get_input_value('consumer_key');?>" required />
             </div>
             <div class="wrap pure-control-group">
               <label for="twitteraccountbox_options[consumer_secret]"><?php _e( 'Twitter Consumer Secret:', $this->plugin_slug );?></label>
-              <input type="text" name="twitteraccountbox_options[consumer_secret]" value="<?php echo self::get_input_value('consumer_secret');?>"  />
+              <input type="text" name="twitteraccountbox_options[consumer_secret]" value="<?php echo self::get_input_value('consumer_secret');?>" required />
             </div>
             <div class="wrap pure-control-group">
               <label for="twitteraccountbox_options[oauth_access_token]"><?php _e( 'Twitter OAuth Access Token:', $this->plugin_slug );?></label>
-              <input type="text" name="twitteraccountbox_options[oauth_access_token]" value="<?php echo self::get_input_value('oauth_access_token');?>"/>
+              <input type="text" name="twitteraccountbox_options[oauth_access_token]" value="<?php echo self::get_input_value('oauth_access_token');?>" required/>
             </div>
             <div class="wrap pure-control-group">
               <label for="twitteraccountbox_options[auth_token_secret]"><?php _e( 'Twitter OAuth Access Token Secret:', $this->plugin_slug );?></label>
-              <input type="text" name="twitteraccountbox_options[oauth_token_secret]" value="<?php echo self::get_input_value('oauth_token_secret');?>"/>
+              <input type="text" name="twitteraccountbox_options[oauth_token_secret]" value="<?php echo self::get_input_value('oauth_token_secret');?>" required/>
             </div>
             <div class="wrap pure-control-group">
               <label for="twitteraccountbox_options[twitter_username]"><?php _e( 'Twitter username:', $this->plugin_slug );?></label>
-              <input type="text" name="twitteraccountbox_options[twitter_username]" value="<?php echo self::get_input_value('twitter_username');?>" />
+              <input type="text" name="twitteraccountbox_options[twitter_username]" value="<?php echo self::get_input_value('twitter_username');?>" required />
             </div>
           </div>
           <?php submit_button();?>
