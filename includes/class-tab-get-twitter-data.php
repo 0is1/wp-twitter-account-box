@@ -136,6 +136,7 @@ if ( ! class_exists( 'TabGetTwitterData' ) ) {
         error_log(date('j.n.Y H:i:s'). " : ", 3, TAB__PLUGIN_DIR .'/logs/twitteraccountbox-errors.log');
         error_log($e.PHP_EOL, 3, TAB__PLUGIN_DIR .'/logs/twitteraccountbox-errors.log');
         error_log("-----".PHP_EOL, 3, TAB__PLUGIN_DIR .'/logs/twitteraccountbox-errors.log');
+        return false;
       }
     }
 
@@ -147,8 +148,10 @@ if ( ! class_exists( 'TabGetTwitterData' ) ) {
     private static function create_twitteraccountbox_transient() {
       if(!get_transient('twitteraccountbox_transient') || get_transient('twitteraccountbox_transient') === "") {
         $twitteraccountbox_transient = self::get_twitter_data();
-        // Set 15 min cache
-        set_transient('twitteraccountbox_transient', $twitteraccountbox_transient, 900);
+        if ($twitteraccountbox_transient) {
+          // Set 15 min cache
+          set_transient('twitteraccountbox_transient', $twitteraccountbox_transient, 900);
+        }
       }
     }
   }
