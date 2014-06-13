@@ -1,7 +1,7 @@
 === Twitter Account Box aka TAB ===
 
-Contributors: Janne Juhani Saarela aka 0is1
-Tags: Twitter, Social Media, TAB
+Contributors: 0is1
+Tags: Twitter, Social Media, widget
 Requires at least: ?
 Tested up to: 3.9.1
 Stable tag: 0.1.0
@@ -9,11 +9,14 @@ License: GPLv2 or later
 
 
 Plugin that adds your Twitter account details box in your Wordpress site via widget.
-[Visit plugin site](http://tab.jannejuhani.net/)
 
 == Description ==
 
+Plugin that adds your Twitter account details box in your Wordpress site via widget.
+
 Work in progress... but it's working! Like this: https://raw.githubusercontent.com/0is1/wp-twitter-account-box/master/public/images/twitteraccountbox-example.png
+
+[Visit plugin site](http://tab.jannejuhani.net/)
 
 There's still things TODO:
 
@@ -24,7 +27,6 @@ There's still things TODO:
 * Better error handling
 * Documentation
 * Test with different WP-versions
-* Clean things up when uninstalling the plugin
 
 == Installation ==
 
@@ -35,7 +37,8 @@ There's still things TODO:
 * Save and go to Appearance -> Widgets, and add Twitter Account Box Widget to your Widget area
 
 == Screenshots ==
-...
+
+* TODO
 
 == Frequently Asked Questions ==
 
@@ -50,9 +53,6 @@ Please tell about it: janne [AT] jannejuhani.net
 [Or open an issue on GitHub](https://github.com/0is1/wp-twitter-account-box)
 
 Thanks!
-
-== Upgrade Notice ==
-...
 
 == Changelog ==
 
