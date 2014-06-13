@@ -18,8 +18,12 @@ This plugin works already. But there's still things TODO:
 * Test with different WP-versions
 * Clean things up when uninstalling the plugin
 
+## Twitter Account Box uses and thank
+
+* [twitter-api-php](https://github.com/J7mbo/twitter-api-php)
+
 ## Did you notice a bug?
 * Please tell about it: janne [AT] jannejuhani.net
 * Or open an issue here on GitHub
 
-Thanks!
+Thank you!
