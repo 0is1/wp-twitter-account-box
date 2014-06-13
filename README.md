@@ -16,7 +16,6 @@ This plugin works already. But there's still things TODO:
 * Better error handling
 * Documentation
 * Test with different WP-versions
-* Clean things up when uninstalling the plugin
 
 ## Twitter Account Box uses and thank
 
