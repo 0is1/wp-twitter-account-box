@@ -78,7 +78,7 @@ if ( ! class_exists( 'CreateTwitterAccountBox' ) ) {
     if (self::$tabGetTwitterData->check_error()):
       return "<p class='twitteraccountbox-error'>". self::$tabGetTwitterData->get_error_message() . "</p>";
 
-    elseif ($data['errors']):
+    elseif (isset($data['errors'])):
       return "<p class='twitteraccountbox-error'>". $data['errors'][0]['message'] . "</p>";
 
     elseif (gettype($data) !== 'NULL' && !self::$tabGetTwitterData->check_error()):
