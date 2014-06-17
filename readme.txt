@@ -38,7 +38,8 @@ There's still things TODO:
 
 == Screenshots ==
 
-* TODO
+1. Admin panel settings
+2. Twitter Account Box in action
 
 == Frequently Asked Questions ==
 
