@@ -1,6 +1,12 @@
 #twitteraccountbox{
   background-color:rgba(245,245,245,0.8);
-  max-width: 520px;
+  border: 1px solid rgb(80, 80, 80);
+  border: 1px solid rgba(40, 40, 40, 0.2);
+  border-radius: 2px;
+  max-width: 550px;
+}
+#twitteraccountbox a{
+  text-decoration: none;
 }
 #twitteraccountbox .twitteraccountbox-error {
   background-color: rgb(255, 255, 255);
@@ -11,7 +17,7 @@
 #twitteraccountbox .in-twitter{
   background-color: rgb(255, 255, 255);
   border-bottom:1px solid rgba(0,0,0,0.1);
-  padding: 1rem 0.5rem;
+  padding: 0.5rem;
 
 }
 #twitteraccountbox .in-twitter p{
@@ -67,6 +73,7 @@
 }
 #twitteraccountbox .twitteraccountbox-details li{
   border-left:1px solid rgb(232, 232, 232);
+  line-height: 1.5;
   padding:.25em .75em;
 }
 
@@ -88,4 +95,13 @@
 #twitteraccountbox .twitteraccountbox-details .follow-button{
   float:right;
   margin:4px 4px 0;
+}
+#twitteraccountbox .twitter-logo{
+  float: left;
+  height: 15px;
+  margin: 0 2% 0 0;
+  width: 15px;
+}
+#twitteraccountbox .icon-twitter {
+  color: rgb(0, 172, 238);
 }
