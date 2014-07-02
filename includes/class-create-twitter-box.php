@@ -110,8 +110,8 @@ if ( ! class_exists( 'CreateTwitterAccountBox' ) ) {
 
       self::$twitter_data['twitter_user_profile_link'] = TAB__TWITTER_BASE_URL . self::$twitter_data['twitter_user_nick']; ?>
       <section class="in-twitter header">
-        <figure class="newsfeed-icon twitter-logo">
-          <i class="icon-twitter-bird"></i>
+        <figure class="twitter-logo">
+          <i class="icon-twitter"></i>
         </figure>
         <p><?php echo self::$twitter_data['twitter_user_real_name'];?><?php _e(' – on Twitter', $this->plugin_slug); ?></p>
       </section>

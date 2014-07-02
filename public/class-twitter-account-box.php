@@ -107,6 +107,7 @@ if ( ! class_exists( 'TwitterAccountBox' ) ) {
      */
     public function enqueue_styles() {
       wp_enqueue_style( $this->plugin_slug . '-plugin-styles', plugins_url( 'styles/twitteraccountbox.css', __FILE__ ), array(), TAB__VERSION );
+      wp_enqueue_style($this->plugin_slug . '-fontello', plugins_url('vendor/fontello-tab/css/twitter-account-box.css', __FILE__), array(), TAB__VERSION);
     }
 
     /**
