@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Twitter Account Box 0.1.0\n"
-"POT-Creation-Date: 2014-06-11 22:08+0200\n"
-"PO-Revision-Date: 2014-06-11 22:09+0200\n"
+"Project-Id-Version: Twitter Account Box 0.2.0\n"
+"POT-Creation-Date: 2014-07-02 20:29+0200\n"
+"PO-Revision-Date: 2014-07-02 21:18+0200\n"
 "Last-Translator: Janne Saarela <janne@jannejuhani.net>\n"
 "Language-Team: Janne Saarela <janne@jannejuhani.net>\n"
 "Language: en\n"
@@ -16,98 +16,162 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:106
+#: ../svn-twitter-account-box/trunk/admin/class-twitter-account-box-admin.php:105
+#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:105
 msgid "Twitter Account Box Options"
 msgstr ""
 
-#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:107
+#: ../svn-twitter-account-box/trunk/admin/class-twitter-account-box-admin.php:106
+#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:106
 msgid "Twitter Account Box"
 msgstr ""
 
+#: ../svn-twitter-account-box/trunk/admin/class-twitter-account-box-admin.php:129
 #: ../twitter-account-box/admin/class-twitter-account-box-admin.php:130
 msgid "You do not have sufficient permissions to access this page."
 msgstr ""
 
-#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:151
+#: ../svn-twitter-account-box/trunk/admin/class-twitter-account-box-admin.php:150
+#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:148
 msgid "Get Twitter Developer-account"
 msgstr ""
 
-#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:153
+#: ../svn-twitter-account-box/trunk/admin/class-twitter-account-box-admin.php:152
+#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:150
 msgid "Twitter options"
 msgstr ""
 
-#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:155
+#: ../svn-twitter-account-box/trunk/admin/class-twitter-account-box-admin.php:154
 msgid "Twitter Consumer Key:"
 msgstr ""
 
-#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:159
+#: ../svn-twitter-account-box/trunk/admin/class-twitter-account-box-admin.php:158
 msgid "Twitter Consumer Secret:"
 msgstr ""
 
-#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:163
+#: ../svn-twitter-account-box/trunk/admin/class-twitter-account-box-admin.php:162
 msgid "Twitter OAuth Access Token:"
 msgstr ""
 
-#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:167
+#: ../svn-twitter-account-box/trunk/admin/class-twitter-account-box-admin.php:166
 msgid "Twitter OAuth Access Token Secret:"
 msgstr ""
 
-#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:171
+#: ../svn-twitter-account-box/trunk/admin/class-twitter-account-box-admin.php:170
+#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:168
 msgid "Twitter username:"
 msgstr ""
 
-#: ../twitter-account-box/includes/class-create-twitter-box.php:113
+#: ../svn-twitter-account-box/trunk/includes/class-create-twitter-box.php:116
+#: ../twitter-account-box/includes/class-create-twitter-box.php:116
 msgid " – on Twitter"
 msgstr ""
 
-#: ../twitter-account-box/includes/class-create-twitter-box.php:128
+#: ../svn-twitter-account-box/trunk/includes/class-create-twitter-box.php:131
+#: ../twitter-account-box/includes/class-create-twitter-box.php:131
 msgid "– Tweets"
 msgstr ""
 
-#: ../twitter-account-box/includes/class-create-twitter-box.php:129
+#: ../svn-twitter-account-box/trunk/includes/class-create-twitter-box.php:132
+#: ../twitter-account-box/includes/class-create-twitter-box.php:132
 msgid "Tweets"
 msgstr ""
 
-#: ../twitter-account-box/includes/class-create-twitter-box.php:133
+#: ../svn-twitter-account-box/trunk/includes/class-create-twitter-box.php:136
+#: ../twitter-account-box/includes/class-create-twitter-box.php:136
 msgid "– Following"
 msgstr ""
 
-#: ../twitter-account-box/includes/class-create-twitter-box.php:134
+#: ../svn-twitter-account-box/trunk/includes/class-create-twitter-box.php:137
+#: ../twitter-account-box/includes/class-create-twitter-box.php:137
 msgid "Following"
 msgstr ""
 
-#: ../twitter-account-box/includes/class-create-twitter-box.php:138
+#: ../svn-twitter-account-box/trunk/includes/class-create-twitter-box.php:141
+#: ../twitter-account-box/includes/class-create-twitter-box.php:141
 msgid "– Followers"
 msgstr ""
 
-#: ../twitter-account-box/includes/class-create-twitter-box.php:139
+#: ../svn-twitter-account-box/trunk/includes/class-create-twitter-box.php:142
+#: ../twitter-account-box/includes/class-create-twitter-box.php:142
 msgid "Followers"
 msgstr ""
 
-#: ../twitter-account-box/includes/class-create-twitter-box.php:144
+#: ../svn-twitter-account-box/trunk/includes/class-create-twitter-box.php:147
+#: ../twitter-account-box/includes/class-create-twitter-box.php:147
 msgid "Follow @"
 msgstr ""
 
-#: ../twitter-account-box/includes/class-create-twitter-box.php:153
+#: ../svn-twitter-account-box/trunk/includes/class-create-twitter-box.php:156
+#: ../twitter-account-box/includes/class-create-twitter-box.php:156
 msgid "There's problems to retrieve data from Twitter at the moment..."
 msgstr ""
 
+#: ../svn-twitter-account-box/trunk/public/class-twitter-account-box-widget.php:17
 #: ../twitter-account-box/public/class-twitter-account-box-widget.php:17
 msgid "Twitter Account Box Widget"
 msgstr ""
 
+#: ../svn-twitter-account-box/trunk/public/class-twitter-account-box-widget.php:18
 #: ../twitter-account-box/public/class-twitter-account-box-widget.php:18
 msgid "Display your Twitter Account Box"
 msgstr ""
 
+#: ../svn-twitter-account-box/trunk/public/class-twitter-account-box-widget.php:38
 #: ../twitter-account-box/public/class-twitter-account-box-widget.php:38
 msgid "Twitter"
 msgstr ""
 
+#: ../svn-twitter-account-box/trunk/public/class-twitter-account-box.php:79
 #: ../twitter-account-box/public/class-twitter-account-box.php:79
 msgid "TwitterAccountBox requires WordPress "
 msgstr ""
 
+#: ../svn-twitter-account-box/trunk/public/class-twitter-account-box.php:79
 #: ../twitter-account-box/public/class-twitter-account-box.php:79
 msgid " or higher..."
+msgstr ""
+
+#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:152
+msgid "Twitter API Key:"
+msgstr ""
+
+#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:156
+msgid "Twitter API Secret:"
+msgstr ""
+
+#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:160
+msgid "Access Token:"
+msgstr ""
+
+#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:164
+msgid "Access Token Secret:"
+msgstr ""
+
+#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:175
+msgid "Thanks for using Twitter Account Box -plugin!"
+msgstr ""
+
+#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:177
+msgid "If you like it, you can also "
+msgstr ""
+
+#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:178
+msgid "@Twitter"
+msgstr ""
+
+#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:179
+msgid "follow me on Twitter"
+msgstr ""
+
+#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:184
+msgid "If you have new features on your mind or spotted a bug, please "
+msgstr ""
+
+#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:186
+msgid "tell about it on GitHub"
+msgstr ""
+
+#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:189
+msgid "You can also buy me a beer!"
 msgstr ""
