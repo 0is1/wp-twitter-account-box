@@ -4,7 +4,7 @@ Contributors: 0is1
 Tags: Twitter, Social Media, widget
 Requires at least: ?
 Tested up to: 3.9.1
-Stable tag: 0.1.0
+Stable tag: 0.2.0
 License: GPLv2 or later
 
 
@@ -20,7 +20,6 @@ Work in progress... but it's working! Like this: https://raw.githubusercontent.c
 
 There's still things TODO:
 
-* Implementation to icon-twitter-bird for example: [Fontello](http://fontello.com/)
 * Enable shortcodes
 * Style admin panel options-page
 * Make TAB more responsive when it's included in small containers
@@ -40,12 +39,14 @@ There's still things TODO:
 
 1. Admin panel settings
 2. Twitter Account Box in action
+3. dev.twitter.com help #1
+4. dev.twitter.com help #2
 
 == Frequently Asked Questions ==
 
 = How I get Twitter Consumer Key etc.? =
 
-You can get those from [Twitter Development-site](https://dev.twitter.com/). Sign in or create new account, after login click "My applications" (up right dropdown), click "Create New App" and complete the process.
+You can get those from [Twitter Development-site](https://dev.twitter.com/). Sign in or create new account, after login click "My applications" (up right dropdown), click "Create New App" and complete the process. Then click "Create my access token"-button on "API Keys"-page (see screenshots).
 
 == Debug ==
 
@@ -56,6 +57,14 @@ Please tell about it: janne [AT] jannejuhani.net
 Thanks!
 
 == Changelog ==
+
+= 0.2.0 =
+
+* Add new screenshots
+* Edit options-page auth input names
+* Add some developer info and donate-button on options-page
+* Add some style fixes
+* Add icons
 
 = 0.1.0 =
 

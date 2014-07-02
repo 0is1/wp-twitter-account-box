@@ -10,7 +10,6 @@ Plugin that adds your Twitter account details box in your Wordpress site via wid
 
 This plugin works already. But there's still things TODO:
 
-* Implementation to icon-twitter-bird (for example: [Fontello](http://fontello.com/))
 * Enable shortcodes
 * Style admin panel options-page
 * Make TAB more responsive when it's included in small containers
