@@ -9,7 +9,8 @@ Plugin that adds your Twitter account details box in your Wordpress site via wid
 * ![Image](public/images/twitteraccountbox-example.png?raw=true)
 
 This plugin works already. But there's still things TODO:
-
+* Figure out if it's possible to check if user already follows the account and show "Following"-button instead of "Follow"-button
+  * Maybe [GET friendships/exists](https://dev.twitter.com/docs/api/1/get/friendships/exists)
 * Enable shortcodes
 * Style admin panel options-page
 * Make TAB more responsive when it's included in small containers
