@@ -8,6 +8,10 @@
 #twitteraccountbox a{
   text-decoration: none;
 }
+#twitteraccountbox ul li{
+  background-image: none;
+  list-style: none;
+}
 #twitteraccountbox .twitteraccountbox-error {
   background-color: rgb(255, 255, 255);
   color: rgb(200, 50, 50);
@@ -79,6 +83,7 @@
 
 #twitteraccountbox .twitteraccountbox-details li:first-of-type{
   border-left:none;
+  padding: .25em .75em;
 }
 
 #twitteraccountbox .twitteraccountbox-details li span{
