@@ -19,7 +19,7 @@ if ( ! defined( 'WPINC' ) ) {
 Plugin Name:  Twitter Account Box (TAB)
 Plugin URI:   http://tab.jannejuhani.net
 Description:  This plugin adds your Twitter account details box in your Wordpress site.
-Version:      0.2.0
+Version:      0.2.1
 Author:       Janne Saarela
 Author URI:   http://www.jannejuhani.net/
 License:      GPL2
@@ -42,7 +42,7 @@ License URI:  http://www.gnu.org/licenses/gpl-2.0.txt
 */
 ?>
 <?php
-  define( 'TAB__VERSION', '0.2.0' );
+  define( 'TAB__VERSION', '0.2.1' );
   define( 'TAB__MINIMUM_WP_VERSION', '3.0' );
   define( 'TAB__PLUGIN_URL', plugin_dir_url( __FILE__ ) );
   define( 'TAB__PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
