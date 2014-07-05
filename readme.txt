@@ -63,6 +63,11 @@ Thanks!
 
 == Changelog ==
 
+= 0.2.1 =
+
+* Make TAB a little bit more responsive
+* Add some style defaults
+
 = 0.2.0 =
 
 * Add new screenshots
