@@ -40,6 +40,24 @@ if ( ! class_exists( 'CreateTwitterAccountBox' ) ) {
       $plugin = TwitterAccountBox::get_instance();
       $this->plugin_slug = $plugin->get_plugin_slug();
     }
+    private function process_tweet($text){
+      // Method to add hyperlink html tags to any urls, twitter ids or hashtags in the tweet
+      $text = preg_replace_callback('@(https?|ftp)://(-\.)?([^\s/?\.#-]+\.?)+(/[^\s]*)?$@iS',
+       function ($matches) {
+             return '<a href="' . $matches[0] . '">' . $matches[0] . '</a>';
+         }, $text);
+
+     $text = preg_replace_callback('/(^|[\n ])@([^0-9\s]\w+)/',
+       function ($matches) {
+             return '<a href="https://www.twitter.com/' . $matches[2] .'">@' . $matches[2] . '</a> ';
+         }, $text);
+
+     $text = preg_replace_callback('/#([^0-9]\w+)/',
+       function ($matches) {
+             return '<a href="https://twitter.com/hashtag/' . $matches[1] . '" >#' . $matches[1] . '</a>';
+         }, $text);
+    return $text;
+    }
    /**
    * Return an instance of this class.
    * @since     0.1.0
@@ -75,6 +93,7 @@ if ( ! class_exists( 'CreateTwitterAccountBox' ) ) {
   }
   public function createContent(){
     $data = get_transient('twitteraccountbox_transient');
+    $twitteraccountbox_data = get_option('twitteraccountbox_options');
     if (self::$tabGetTwitterData->check_error()):
       return "<p class='twitteraccountbox-error'>". self::$tabGetTwitterData->get_error_message() . "</p>";
 
@@ -111,12 +130,12 @@ if ( ! class_exists( 'CreateTwitterAccountBox' ) ) {
       self::$twitter_data['twitter_user_profile_link'] = TAB__TWITTER_BASE_URL . self::$twitter_data['twitter_user_nick']; ?>
       <section class="in-twitter header">
         <figure class="twitter-logo">
-          <i class="icon-twitter"></i>
+          <i class="tab-icon-twitter"></i>
         </figure>
         <p><?php echo self::$twitter_data['twitter_user_real_name'];?><?php _e(' – on Twitter', $this->plugin_slug); ?></p>
       </section>
       <section class="twitter-user-details" style="background-image: url(<?php echo self::$twitter_data['twitter_profile_banner_url'];?>);">
-        <figure class="newsfeed-icon-img twitteraccountbox-img clearfix">
+        <figure class="twitteraccountbox-img clearfix">
         <img src="<?php echo self::$twitter_data['twitter_user_image'];?>" alt="<?php echo self::$twitter_data['twitter_user_real_name'];?>" title="<?php echo self::$twitter_data['twitter_user_real_name'];?>">
         </figure>
         <h1><?php echo self::$twitter_data['twitter_user_real_name']; ?></h1>
@@ -147,11 +166,91 @@ if ( ! class_exists( 'CreateTwitterAccountBox' ) ) {
           <a href="<?php echo self::$twitter_data['twitter_user_profile_link'];?>" class="twitter-follow-button" data-show-count="false" data-lang="<?php echo TAB__SITE_LOCALE;?>" data-size="large" data-show-screen-name="false"><?php _e('Follow @', $this->plugin_slug); ?><?php echo self::$twitter_data['twitter_user_nick'];?></a>
         </span>
       </section>
+      <?php
+        // Add tweets if the option is enabled
+        if($twitteraccountbox_data['twitter_enable_tweets']):
+      ?>
+        <section class="twitteraccountbox-tweets">
+          <?php
+            foreach ($data as $key => $value) { ?>
+              <?php
+              // Retweet
+              if($value['retweeted']): ?>
+                <div class="twitteraccountbox-tweet">
+                <span class="twitteraccountbox-tweet-retweeded-by">
+                  <i class="tab-icon-retweet"></i>
+                  <?php _e('Retweeded by', $this->plugin_slug);?>
+                  <?php echo self::$twitter_data['twitter_user_real_name'];?>
+                </span>
+                  <figure class="twitteraccountbox-tweet-retweet-user-image">
+                    <img src="<?php echo $value['retweeted_status']['user']['profile_image_url']?>" title="@<?php echo $value['retweeted_status']['user']['screen_name'];?>" alt="@<?php echo $value['retweeted_status']['user']['screen_name'];?>">
+                  </figure>
+                <span class="twitteraccountbox-tweet-retweet-by">
+                  <a href="<?php echo TAB__TWITTER_BASE_URL . $value['retweeted_status']['user']['screen_name'];?>" title="@<?php echo $value['retweeted_status']['user']['screen_name'];?>">
+                    <span class="twitteraccountbox-tweet-username"><?php echo $value['retweeted_status']['user']['name'];?></span>
+                    <span>@<?php echo $value['retweeted_status']['user']['screen_name'];?></span>
+                  </a>
+                  <?php
+                  $datetime = new DateTime($value['retweeted_status']['created_at']);
+                  $datetime->setTimezone(new DateTimeZone('Europe/Helsinki'));
+                  ?>
+                  <span><?php echo $datetime->format('d.m.Y');?></span>
+                </span>
+                  <p class="twitteraccountbox-tweet-text"><?php echo self::process_tweet($value['retweeted_status']['text']);?></p>
+                <?php
+                  if(isset($value['retweeted_status']['entities']['media'])) :
+                  // Add now only first image from media
+                 ?>
+                  <figure>
+                    <a href="<?php echo $value['retweeted_status']['entities']['media'][0]['expanded_url']?>" title="<?php echo $value['retweeted_status']['text'];?>">
+                      <img src="<?php echo $value['retweeted_status']['entities']['media'][0]['media_url']?>" alt="<?php _e('Image by ', $this->plugin_slug);?>@<?php echo $value['retweeted_status']['user']['screen_name'];?>">
+                    </a>
+                  </figure>
+                </div>
+                <?php endif; //if($value['retweeted_status']['entities']['media']) ?>
+                <?php
+              // Normal tweet
+              else:
+              ?>
+              <div class="twitteraccountbox-tweet">
+                <figure class="twitteraccountbox-img">
+                <img src="<?php echo $value['user']['profile_image_url'];?>" alt="@<?php echo self::$twitter_data['twitter_user_nick'];?>" title="@<?php echo self::$twitter_data['twitter_user_nick'];?>">
+                </figure>
+                <span class="twitteraccountbox-tweet-by">
+                  <a href="<?php echo TAB__TWITTER_BASE_URL . self::$twitter_data['twitter_user_nick'];?>" title="@<?php echo self::$twitter_data['twitter_user_nick'];?>">
+                    <span class="twitteraccountbox-tweet-username"><?php echo self::$twitter_data['twitter_user_real_name'];?></span>
+                    <span>@<?php echo self::$twitter_data['twitter_user_nick'];?></span>
+                  </a>
+                  <?php
+                    $datetime = new DateTime($value['created_at']);
+                    $datetime->setTimezone(new DateTimeZone('Europe/Helsinki'));
+                   ?>
+                  <span><?php echo $datetime->format('d.m.Y');?></span>
+                </span>
+                <p class="twitteraccountbox-tweet-text"><?php echo self::process_tweet($value['text']);?></p>
+                <?php
+                  if(isset($value['entities']['media'])) :
+                  // Add now only first image from media
+                 ?>
+                  <figure>
+                    <a href="<?php echo $value['entities']['media'][0]['expanded_url']?>" title="<?php echo $value['text'];?>">
+                      <img src="<?php echo $value['entities']['media'][0]['media_url']?>" alt="<?php _e('Image by ', $this->plugin_slug);?>@<?php echo self::$twitter_data['twitter_user_nick'];?>">
+                    </a>
+                  </figure>
+                </div>
+                <?php endif; //if($value['retweeted_status']['entities']['media']) ?>
+              </div>
+            <?php endif; //if($value['retweeted']) ?>
+            <?php
+            }
+            ?>
+        </section>
+        <?php endif; //if($twitteraccountbox_data['twitter_enable_tweets'])?>
     <?php else : // If Twitter data isn't available ?>
       <div class="twitteraccountbox fleft pure-u">
         <section class="twitter-feed-unavailable">
           <figure class="newsfeed-icon twitter-logo">
-            <i class="icon-twitter-bird"></i>
+            <i class="icon-twitter"></i>
           </figure>
           <p><?php _e("There's problems to retrieve data from Twitter at the moment...", $this->plugin_slug); ?></p>
         </section>

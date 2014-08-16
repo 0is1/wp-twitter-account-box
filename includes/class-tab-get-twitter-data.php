@@ -92,7 +92,9 @@ if ( ! class_exists( 'TabGetTwitterData' ) ) {
         'twitter_consumer_secret' => $data['consumer_secret'],
         'twitter_oauth_access_token' => $data['oauth_access_token'],
         'twitter_oauth_token_secret' => $data['oauth_token_secret'],
-        'twitter_username' => $data['twitter_username']
+        'twitter_username' => $data['twitter_username'],
+        'twitter_enable_tweets' => $data['twitter_enable_tweets'],
+        'twitter_number_of_tweets' => $data['twitter_number_of_tweets']
         );
         self::$error = [
           'error_message' => '',
@@ -111,7 +113,7 @@ if ( ! class_exists( 'TabGetTwitterData' ) ) {
         'consumer_secret' => self::$options['twitter_consumer_secret']
       );
       $url = TAB__TWITTER_API_URL;
-      $getfield = '?screen_name='.self::$options['twitter_username'].'&count=1';
+      self::$options['twitter_enable_tweets'] ? $getfield = '?screen_name='.self::$options['twitter_username'].'&count='.self::$options['twitter_number_of_tweets'].'' : $getfield = '?screen_name='.self::$options['twitter_username'].'&count=1';
       $requestMethod = 'GET';
 
       try {
