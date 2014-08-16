@@ -108,10 +108,44 @@
   margin: 0 2% 0 0;
   width: 15px;
 }
-#twitteraccountbox .icon-twitter {
+#twitteraccountbox .tab-icon-twitter {
   color: rgb(0, 172, 238);
 }
-
+#twitteraccountbox .tab-icon-retweet{
+  color: rgb(119, 178, 85);
+}
+#twitteraccountbox .twitteraccountbox-tweets {
+  border-top: 1px solid rgb(80, 80, 80);
+  border-top: 1px solid rgba(40, 40, 40, 0.2);
+  padding: .5rem;
+}
+#twitteraccountbox .twitteraccountbox-tweet {
+  border-top: 1px solid rgb(80, 80, 80);
+  border-top: 1px solid rgba(40, 40, 40, 0.2);
+  padding: 1rem .5rem;
+}
+#twitteraccountbox .twitteraccountbox-tweet:first-of-type {
+  border: none;
+}
+#twitteraccountbox .twitteraccountbox-img, .twitteraccountbox-tweet-retweet-user-image {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+}
+#twitteraccountbox .twitteraccountbox-tweet-by, .twitteraccountbox-tweet-retweeded-by {
+  font-size: 90%;
+}
+#twitteraccountbox .twitteraccountbox-tweet-retweeded-by:after {
+  content: " ";
+  display: block;
+  margin-bottom: .5rem;
+}
+#twitteraccountbox .twitteraccountbox-tweet-username {
+  font-weight: 600;
+}
+#twitteraccountbox .twitteraccountbox-tweet p{
+  margin-bottom: 0;
+}
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
   #twitteraccountbox .twitteraccountbox-details .follow-button{
     float: none;
