@@ -78,15 +78,28 @@ if ( ! class_exists( 'TwitterAccountBoxAdmin' ) ) {
       // TODO
       $input_validated = array();
 
-      isset( $options['consumer_key'] ) ? $input_validated['consumer_key'] = trim($options['consumer_key']) : $options['consumer_key'] = "";
+      isset( $options['consumer_key'] ) ? $input_validated['consumer_key'] = trim($options['consumer_key']) : $input_validated['consumer_key'] = "";
 
-      isset( $options['consumer_secret'] ) ? $input_validated['consumer_secret'] = trim($options['consumer_secret']) : $options['consumer_secret'] = "";
+      isset( $options['consumer_secret'] ) ? $input_validated['consumer_secret'] = trim($options['consumer_secret']) : $input_validated['consumer_secret'] = "";
 
-      isset( $options['oauth_access_token'] ) ? $input_validated['oauth_access_token'] = trim($options['oauth_access_token']) : $options['oauth_access_token'] = "";
+      isset( $options['oauth_access_token'] ) ? $input_validated['oauth_access_token'] = trim($options['oauth_access_token']) : $input_validated['oauth_access_token'] = "";
 
-      isset( $options['oauth_token_secret'] ) ? $input_validated['oauth_token_secret'] = trim($options['oauth_token_secret']) : $options['oauth_token_secret'] = "";
+      isset( $options['oauth_token_secret'] ) ? $input_validated['oauth_token_secret'] = trim($options['oauth_token_secret']) : $input_validated['oauth_token_secret'] = "";
 
-      isset( $options['twitter_username'] ) ? $input_validated['twitter_username'] = preg_replace('/\s+/', '', $options['twitter_username']) : $options['twitter_username'] = "";
+      isset( $options['twitter_username'] ) ? $input_validated['twitter_username'] = preg_replace('/\s+/', '', $options['twitter_username']) : $input_validated['twitter_username'] = "";
+
+      isset( $options['twitter_enable_tweets'] ) ? $input_validated['twitter_enable_tweets'] = true : $input_validated['twitter_enable_tweets'] = false;
+
+      if ( isset( $options[ 'twitter_number_of_tweets' ] ) && is_numeric( $options[ 'twitter_number_of_tweets' ] )) {
+        if($options[ 'twitter_number_of_tweets' ] <= 10){
+          $input_validated[ 'twitter_number_of_tweets' ] = $options[ 'twitter_number_of_tweets' ];
+        }
+        else if($options[ 'twitter_number_of_tweets' ] > 10) {
+          $input_validated[ 'twitter_number_of_tweets' ] = 10;
+        }
+      } else $input_validated[ 'twitter_number_of_tweets' ] = 3; // Default
+
+
 
       self::delete_tab_transients();
       return $input_validated;
@@ -167,6 +180,14 @@ if ( ! class_exists( 'TwitterAccountBoxAdmin' ) ) {
             <div class="wrap pure-control-group">
               <label for="twitteraccountbox_options[twitter_username]"><?php _e( 'Twitter username:', $this->plugin_slug );?></label>
               <input type="text" name="twitteraccountbox_options[twitter_username]" value="<?php echo self::get_input_value('twitter_username');?>" required />
+            </div>
+            <div class="wrap pure-control-group">
+              <label for="twitteraccountbox_options[twitter_enable_tweets]"><?php _e( 'Enable tweets?', $this->plugin_slug );?></label>
+              <input type="checkbox" name="twitteraccountbox_options[twitter_enable_tweets]" value="<?php echo self::get_input_value('twitter_enable_tweets');?>" <?php if(self::get_input_value('twitter_enable_tweets')) echo "checked=checked";?> />
+            </div>
+            <div class="wrap pure-control-group">
+              <label for="twitteraccountbox_options[twitter_number_of_tweets]"><?php _e( 'Number of tweets to show (max. 10):', $this->plugin_slug );?></label>
+              <input type="number" name="twitteraccountbox_options[twitter_number_of_tweets]" value="<?php echo self::get_input_value('twitter_number_of_tweets');?>" />
             </div>
           </div>
           <?php submit_button();?>

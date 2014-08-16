@@ -1,8 +1,10 @@
 .twitteraccountbox-options .pure-control-group label{
+  cursor: auto;
   width: 25%;
 }
 .twitteraccountbox-options .pure-control-group input{
   display: block;
+  margin: .2rem 0 .7rem;
   width: 40%;
 }
 .twitteraccountbox-options .pure-control-group input[type="checkbox"]{
