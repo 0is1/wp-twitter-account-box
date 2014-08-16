@@ -1,11 +1,17 @@
 {
   "name": "twitter-account-box",
-  "css_prefix_text": "icon-",
+  "css_prefix_text": "tab-icon-",
   "css_use_suffix": false,
   "hinting": true,
   "units_per_em": 1000,
   "ascent": 850,
   "glyphs": [
+    {
+      "uid": "09feb4465d9bd1364f4e301c9ddbaa92",
+      "css": "retweet",
+      "code": 59394,
+      "src": "fontawesome"
+    },
     {
       "uid": "906348dc798a0d42715cc97c875e3ac6",
       "css": "twitter-squared",

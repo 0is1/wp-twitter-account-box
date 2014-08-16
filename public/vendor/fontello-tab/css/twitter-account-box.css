@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'twitter-account-box';
-  src: url('../font/twitter-account-box.eot?78445689');
-  src: url('../font/twitter-account-box.eot?78445689#iefix') format('embedded-opentype'),
-       url('../font/twitter-account-box.woff?78445689') format('woff'),
-       url('../font/twitter-account-box.ttf?78445689') format('truetype'),
-       url('../font/twitter-account-box.svg?78445689#twitter-account-box') format('svg');
+  src: url('../font/twitter-account-box.eot?57229243');
+  src: url('../font/twitter-account-box.eot?57229243#iefix') format('embedded-opentype'),
+       url('../font/twitter-account-box.woff?57229243') format('woff'),
+       url('../font/twitter-account-box.ttf?57229243') format('truetype'),
+       url('../font/twitter-account-box.svg?57229243#twitter-account-box') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -14,12 +14,12 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'twitter-account-box';
-    src: url('../font/twitter-account-box.svg?78445689#twitter-account-box') format('svg');
+    src: url('../font/twitter-account-box.svg?57229243#twitter-account-box') format('svg');
   }
 }
 */
  
- [class^="icon-"]:before, [class*=" icon-"]:before {
+ [class^="tab-icon-"]:before, [class*=" tab-icon-"]:before {
   font-family: "twitter-account-box";
   font-style: normal;
   font-weight: normal;
@@ -50,5 +50,6 @@
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
  
-.icon-twitter:before { content: '\e800'; } /* '' */
-.icon-twitter-squared:before { content: '\e801'; } /* '' */
+.tab-icon-twitter:before { content: '\e800'; } /* '' */
+.tab-icon-twitter-squared:before { content: '\e801'; } /* '' */
+.tab-icon-retweet:before { content: '\e802'; } /* '' */
