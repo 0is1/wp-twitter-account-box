@@ -1,180 +1,174 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Twitter Account Box\n"
-"POT-Creation-Date: 2014-07-02 20:29+0200\n"
-"PO-Revision-Date: 2014-07-05 18:32+0200\n"
+"POT-Creation-Date: 2014-08-16 18:41+0200\n"
+"PO-Revision-Date: 2014-08-16 18:42+0200\n"
 "Last-Translator: Janne Saarela <janne@jannejuhani.net>\n"
 "Language-Team: Janne Saarela <janne@jannejuhani.net>\n"
 "Language: fi_FI\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.5\n"
-"X-Poedit-Basepath: ../\n"
+"X-Generator: Poedit 1.6.7\n"
+"X-Poedit-Basepath: ./\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e\n"
-"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
 
-#: ../svn-twitter-account-box/trunk/admin/class-twitter-account-box-admin.php:105
-#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:105
+#: ../admin/class-twitter-account-box-admin.php:118
 msgid "Twitter Account Box Options"
 msgstr "Twitter Account Box Asetukset"
 
-#: ../svn-twitter-account-box/trunk/admin/class-twitter-account-box-admin.php:106
-#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:106
+#: ../admin/class-twitter-account-box-admin.php:119
 msgid "Twitter Account Box"
 msgstr "Twitter Account Box"
 
-#: ../svn-twitter-account-box/trunk/admin/class-twitter-account-box-admin.php:129
-#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:130
+#: ../admin/class-twitter-account-box-admin.php:143
 msgid "You do not have sufficient permissions to access this page."
 msgstr "Sinulla ei ole tarvittavia oikeuksia tarkastella tätä sivua."
 
-#: ../svn-twitter-account-box/trunk/admin/class-twitter-account-box-admin.php:150
-#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:148
+#: ../admin/class-twitter-account-box-admin.php:161
 msgid "Get Twitter Developer-account"
 msgstr "Hanki Twitterin kehittäjätunnukset"
 
-#: ../svn-twitter-account-box/trunk/admin/class-twitter-account-box-admin.php:152
-#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:150
+#: ../admin/class-twitter-account-box-admin.php:163
 msgid "Twitter options"
 msgstr "Twitter Account Box Asetukset"
 
-#: ../svn-twitter-account-box/trunk/admin/class-twitter-account-box-admin.php:154
-msgid "Twitter Consumer Key:"
-msgstr "Twitter Consumer Key:"
-
-#: ../svn-twitter-account-box/trunk/admin/class-twitter-account-box-admin.php:158
-msgid "Twitter Consumer Secret:"
-msgstr "Twitter Consumer Secret:"
-
-#: ../svn-twitter-account-box/trunk/admin/class-twitter-account-box-admin.php:162
-msgid "Twitter OAuth Access Token:"
-msgstr "Twitter OAuth Access Token:"
-
-#: ../svn-twitter-account-box/trunk/admin/class-twitter-account-box-admin.php:166
-msgid "Twitter OAuth Access Token Secret:"
-msgstr "Twitter OAuth Access Token Secret:"
-
-#: ../svn-twitter-account-box/trunk/admin/class-twitter-account-box-admin.php:170
-#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:168
-msgid "Twitter username:"
-msgstr "Twitter käyttäjätunnus:"
-
-#: ../svn-twitter-account-box/trunk/includes/class-create-twitter-box.php:116
-#: ../twitter-account-box/includes/class-create-twitter-box.php:116
-msgid " – on Twitter"
-msgstr " – Twitterissä"
-
-#: ../svn-twitter-account-box/trunk/includes/class-create-twitter-box.php:131
-#: ../twitter-account-box/includes/class-create-twitter-box.php:131
-msgid "– Tweets"
-msgstr "– Twiittiä"
-
-#: ../svn-twitter-account-box/trunk/includes/class-create-twitter-box.php:132
-#: ../twitter-account-box/includes/class-create-twitter-box.php:132
-msgid "Tweets"
-msgstr "Twiittiä"
-
-#: ../svn-twitter-account-box/trunk/includes/class-create-twitter-box.php:136
-#: ../twitter-account-box/includes/class-create-twitter-box.php:136
-msgid "– Following"
-msgstr "– Seurattua"
-
-#: ../svn-twitter-account-box/trunk/includes/class-create-twitter-box.php:137
-#: ../twitter-account-box/includes/class-create-twitter-box.php:137
-msgid "Following"
-msgstr "Seurattua"
-
-#: ../svn-twitter-account-box/trunk/includes/class-create-twitter-box.php:141
-#: ../twitter-account-box/includes/class-create-twitter-box.php:141
-msgid "– Followers"
-msgstr "– Seuraajaa"
-
-#: ../svn-twitter-account-box/trunk/includes/class-create-twitter-box.php:142
-#: ../twitter-account-box/includes/class-create-twitter-box.php:142
-msgid "Followers"
-msgstr "Seuraajaa"
-
-#: ../svn-twitter-account-box/trunk/includes/class-create-twitter-box.php:147
-#: ../twitter-account-box/includes/class-create-twitter-box.php:147
-msgid "Follow @"
-msgstr "Seuraa @"
-
-#: ../svn-twitter-account-box/trunk/includes/class-create-twitter-box.php:156
-#: ../twitter-account-box/includes/class-create-twitter-box.php:156
-msgid "There's problems to retrieve data from Twitter at the moment..."
-msgstr "Datan haussa Twitteristä on tällä hetkellä ongelmia..."
-
-#: ../svn-twitter-account-box/trunk/public/class-twitter-account-box-widget.php:17
-#: ../twitter-account-box/public/class-twitter-account-box-widget.php:17
-msgid "Twitter Account Box Widget"
-msgstr "Twitter Account Box Vimpain"
-
-#: ../svn-twitter-account-box/trunk/public/class-twitter-account-box-widget.php:18
-#: ../twitter-account-box/public/class-twitter-account-box-widget.php:18
-msgid "Display your Twitter Account Box"
-msgstr "Lisää Twitter account box sivustolle"
-
-#: ../svn-twitter-account-box/trunk/public/class-twitter-account-box-widget.php:38
-#: ../twitter-account-box/public/class-twitter-account-box-widget.php:38
-msgid "Twitter"
-msgstr "Twitter"
-
-#: ../svn-twitter-account-box/trunk/public/class-twitter-account-box.php:79
-#: ../twitter-account-box/public/class-twitter-account-box.php:79
-msgid "TwitterAccountBox requires WordPress "
-msgstr "TwitterAccountBox vaatii WordPress-versiota "
-
-#: ../svn-twitter-account-box/trunk/public/class-twitter-account-box.php:79
-#: ../twitter-account-box/public/class-twitter-account-box.php:79
-msgid " or higher..."
-msgstr "tai uudempaa..."
-
-#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:152
+#: ../admin/class-twitter-account-box-admin.php:165
 msgid "Twitter API Key:"
 msgstr "Twitter API Key:"
 
-#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:156
+#: ../admin/class-twitter-account-box-admin.php:169
 msgid "Twitter API Secret:"
 msgstr "Twitter API Secret:"
 
-#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:160
+#: ../admin/class-twitter-account-box-admin.php:173
 msgid "Access Token:"
 msgstr "Access Token:"
 
-#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:164
+#: ../admin/class-twitter-account-box-admin.php:177
 msgid "Access Token Secret:"
 msgstr "Access Token Secret:"
 
-#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:175
+#: ../admin/class-twitter-account-box-admin.php:181
+msgid "Twitter username:"
+msgstr "Twitter käyttäjätunnus:"
+
+#: ../admin/class-twitter-account-box-admin.php:185
+msgid "Enable tweets?"
+msgstr "Näytä twiitit?"
+
+#: ../admin/class-twitter-account-box-admin.php:189
+msgid "Number of tweets to show (max. 10):"
+msgstr "Montako twiittiä näytetään (max. 10):"
+
+#: ../admin/class-twitter-account-box-admin.php:196
 msgid "Thanks for using Twitter Account Box -plugin!"
 msgstr "Kiitos, että käytät Twitter Account Box -pluginia!"
 
-#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:177
+#: ../admin/class-twitter-account-box-admin.php:198
 msgid "If you like it, you can also "
 msgstr "Jos pidät siitä, voit myös"
 
-#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:178
+#: ../admin/class-twitter-account-box-admin.php:199
 msgid "@Twitter"
 msgstr "@Twitter"
 
-#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:179
+#: ../admin/class-twitter-account-box-admin.php:200
 msgid "follow me on Twitter"
 msgstr "seuraa minua Twitterissä"
 
-#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:184
+#: ../admin/class-twitter-account-box-admin.php:205
 msgid "If you have new features on your mind or spotted a bug, please "
 msgstr "Jos sinulla on mielessä uusia ominaisuuksia tai huomasit bugin"
 
-#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:186
+#: ../admin/class-twitter-account-box-admin.php:207
 msgid "tell about it on GitHub"
 msgstr "kerrothan siitä GitHubissa, kiitos!"
 
-#: ../twitter-account-box/admin/class-twitter-account-box-admin.php:189
+#: ../admin/class-twitter-account-box-admin.php:210
 msgid "You can also buy me a beer!"
 msgstr "Pidän oluesta, heitä kolikko!"
+
+#: ../includes/class-create-twitter-box.php:135
+msgid " – on Twitter"
+msgstr " – Twitterissä"
+
+#: ../includes/class-create-twitter-box.php:150
+msgid "– Tweets"
+msgstr "– Twiittiä"
+
+#: ../includes/class-create-twitter-box.php:151
+msgid "Tweets"
+msgstr "Twiittiä"
+
+#: ../includes/class-create-twitter-box.php:155
+msgid "– Following"
+msgstr "– Seurattua"
+
+#: ../includes/class-create-twitter-box.php:156
+msgid "Following"
+msgstr "Seurattua"
+
+#: ../includes/class-create-twitter-box.php:160
+msgid "– Followers"
+msgstr "– Seuraajaa"
+
+#: ../includes/class-create-twitter-box.php:161
+msgid "Followers"
+msgstr "Seuraajaa"
+
+#: ../includes/class-create-twitter-box.php:166
+msgid "Follow @"
+msgstr "Seuraa @"
+
+#: ../includes/class-create-twitter-box.php:182
+msgid "Retweeded by"
+msgstr "Uudelleentwiittaus käyttäjältä"
+
+#: ../includes/class-create-twitter-box.php:206
+#: ../includes/class-create-twitter-box.php:237
+msgid "Image by "
+msgstr "Kuva käyttäjältä"
+
+#: ../includes/class-create-twitter-box.php:255
+msgid "There's problems to retrieve data from Twitter at the moment..."
+msgstr "Datan haussa Twitteristä on tällä hetkellä ongelmia..."
+
+#: ../public/class-twitter-account-box-widget.php:17
+msgid "Twitter Account Box Widget"
+msgstr "Twitter Account Box Vimpain"
+
+#: ../public/class-twitter-account-box-widget.php:18
+msgid "Display your Twitter Account Box"
+msgstr "Lisää Twitter account box sivustolle"
+
+#: ../public/class-twitter-account-box-widget.php:38
+msgid "Twitter"
+msgstr "Twitter"
+
+#: ../public/class-twitter-account-box.php:78
+msgid "TwitterAccountBox requires WordPress "
+msgstr "TwitterAccountBox vaatii WordPress-versiota "
+
+#: ../public/class-twitter-account-box.php:78
+msgid " or higher..."
+msgstr "tai uudempaa..."
+
+#~ msgid "Twitter Consumer Key:"
+#~ msgstr "Twitter Consumer Key:"
+
+#~ msgid "Twitter Consumer Secret:"
+#~ msgstr "Twitter Consumer Secret:"
+
+#~ msgid "Twitter OAuth Access Token:"
+#~ msgstr "Twitter OAuth Access Token:"
+
+#~ msgid "Twitter OAuth Access Token Secret:"
+#~ msgstr "Twitter OAuth Access Token Secret:"
 
 #~ msgid "Twiittiä"
 #~ msgstr "Twiittiä"
