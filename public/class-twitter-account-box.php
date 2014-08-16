@@ -37,7 +37,6 @@ if ( ! class_exists( 'TwitterAccountBox' ) ) {
      * @since     0.1.0
      */
     private function __construct() {
-      // TODO
       // Load plugin text domain
       add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
 
