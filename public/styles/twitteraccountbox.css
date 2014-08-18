@@ -146,6 +146,9 @@
 #twitteraccountbox .twitteraccountbox-tweet p{
   margin-bottom: 0;
 }
+#twitteraccountbox .twitteraccountbox-tweet a{
+  display: inline;
+}
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
   #twitteraccountbox .twitteraccountbox-details .follow-button{
     float: none;
