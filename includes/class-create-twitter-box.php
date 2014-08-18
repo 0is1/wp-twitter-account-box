@@ -177,40 +177,40 @@ if ( ! class_exists( 'CreateTwitterAccountBox' ) ) {
               // Retweet
               if($value['retweeted']): ?>
                 <div class="twitteraccountbox-tweet">
-                <span class="twitteraccountbox-tweet-retweeded-by">
-                  <i class="tab-icon-retweet"></i>
-                  <?php _e('Retweeded by', $this->plugin_slug);?>
-                  <?php echo self::$twitter_data['twitter_user_real_name'];?>
-                </span>
-                  <figure class="twitteraccountbox-tweet-retweet-user-image">
-                    <img src="<?php echo $value['retweeted_status']['user']['profile_image_url']?>" title="@<?php echo $value['retweeted_status']['user']['screen_name'];?>" alt="@<?php echo $value['retweeted_status']['user']['screen_name'];?>">
-                  </figure>
-                <span class="twitteraccountbox-tweet-retweet-by">
-                  <a href="<?php echo TAB__TWITTER_BASE_URL . $value['retweeted_status']['user']['screen_name'];?>" title="@<?php echo $value['retweeted_status']['user']['screen_name'];?>">
-                    <span class="twitteraccountbox-tweet-username"><?php echo $value['retweeted_status']['user']['name'];?></span>
-                    <span>@<?php echo $value['retweeted_status']['user']['screen_name'];?></span>
-                  </a>
-                  <?php
-                  $datetime = new DateTime($value['retweeted_status']['created_at']);
-                  $datetime->setTimezone(new DateTimeZone('Europe/Helsinki'));
-                  ?>
-                  <span><?php echo $datetime->format('d.m.Y');?></span>
-                </span>
-                  <p class="twitteraccountbox-tweet-text"><?php echo self::process_tweet($value['retweeted_status']['text']);?></p>
-                <?php
-                  if(isset($value['retweeted_status']['entities']['media'])) :
-                  // Add now only first image from media
-                 ?>
-                  <figure>
-                    <a href="<?php echo $value['retweeted_status']['entities']['media'][0]['expanded_url']?>" title="<?php echo $value['retweeted_status']['text'];?>">
-                      <img src="<?php echo $value['retweeted_status']['entities']['media'][0]['media_url']?>" alt="<?php _e('Image by ', $this->plugin_slug);?>@<?php echo $value['retweeted_status']['user']['screen_name'];?>">
+                  <span class="twitteraccountbox-tweet-retweeded-by">
+                    <i class="tab-icon-retweet"></i>
+                    <?php _e('Retweeded by', $this->plugin_slug);?>
+                    <?php echo self::$twitter_data['twitter_user_real_name'];?>
+                  </span>
+                    <figure class="twitteraccountbox-tweet-retweet-user-image">
+                      <img src="<?php echo $value['retweeted_status']['user']['profile_image_url']?>" title="@<?php echo $value['retweeted_status']['user']['screen_name'];?>" alt="@<?php echo $value['retweeted_status']['user']['screen_name'];?>">
+                    </figure>
+                  <span class="twitteraccountbox-tweet-retweet-by">
+                    <a href="<?php echo TAB__TWITTER_BASE_URL . $value['retweeted_status']['user']['screen_name'];?>" title="@<?php echo $value['retweeted_status']['user']['screen_name'];?>">
+                      <span class="twitteraccountbox-tweet-username"><?php echo $value['retweeted_status']['user']['name'];?></span>
+                      <span>@<?php echo $value['retweeted_status']['user']['screen_name'];?></span>
                     </a>
-                  </figure>
+                    <?php
+                    $datetime = new DateTime($value['retweeted_status']['created_at']);
+                    $datetime->setTimezone(new DateTimeZone('Europe/Helsinki'));
+                    ?>
+                    <span><?php echo $datetime->format('d.m.Y');?></span>
+                  </span>
+                    <p class="twitteraccountbox-tweet-text"><?php echo self::process_tweet($value['retweeted_status']['text']);?></p>
+                  <?php
+                    if(isset($value['retweeted_status']['entities']['media'])) :
+                    // Add now only first image from media
+                   ?>
+                    <figure>
+                      <a href="<?php echo $value['retweeted_status']['entities']['media'][0]['expanded_url']?>" title="<?php echo $value['retweeted_status']['text'];?>">
+                        <img src="<?php echo $value['retweeted_status']['entities']['media'][0]['media_url']?>" alt="<?php _e('Image by ', $this->plugin_slug);?>@<?php echo $value['retweeted_status']['user']['screen_name'];?>">
+                      </a>
+                    </figure>
+                  <?php endif; //if($value['retweeted_status']['entities']['media']) ?>
                 </div>
-                <?php endif; //if($value['retweeted_status']['entities']['media']) ?>
                 <?php
               // Normal tweet
-              else:
+              else :
               ?>
               <div class="twitteraccountbox-tweet">
                 <figure class="twitteraccountbox-img">
@@ -237,7 +237,6 @@ if ( ! class_exists( 'CreateTwitterAccountBox' ) ) {
                       <img src="<?php echo $value['entities']['media'][0]['media_url']?>" alt="<?php _e('Image by ', $this->plugin_slug);?>@<?php echo self::$twitter_data['twitter_user_nick'];?>">
                     </a>
                   </figure>
-                </div>
                 <?php endif; //if($value['retweeted_status']['entities']['media']) ?>
               </div>
             <?php endif; //if($value['retweeted']) ?>
