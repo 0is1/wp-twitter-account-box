@@ -71,6 +71,11 @@ Thanks!
 
 = 0.2.9.1 =
 
+* Fix nested tweet-divs
+* Fix image overflow style problem with some themes and browsers
+
+= 0.2.9 =
+
 * Enable tweets
 * Add some styles
 
