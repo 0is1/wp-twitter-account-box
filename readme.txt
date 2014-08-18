@@ -4,7 +4,7 @@ Contributors: 0is1
 Tags: Twitter, Social Media, widget
 Requires at least: 3.9.0
 Tested up to: 3.9.2
-Stable tag: 0.2.9
+Stable tag: 0.2.9.1
 License: GPLv2 or later
 
 
@@ -25,6 +25,7 @@ This plugin works already. But there's still things TODO:
 * Enable Twitter authentication as default (maybe Premium?)
 * Figure out if it's possible to check if user already follows the account and show "Following"-button instead of "Follow"-button
   * Maybe [GET friendships/exists](https://dev.twitter.com/docs/api/1/get/friendships/exists)
+* Style Tweet button and load Twitter images locally if user is using any "anti social media"-plugin in browser
 * Enable shortcodes
 * Style admin panel options-page
 * Make TAB more responsive
@@ -32,6 +33,10 @@ This plugin works already. But there's still things TODO:
 * Documentation
 * Test with different WP-versions
 * Add Stylus/SASS/LESS support
+
+### Next version: 0.3.0
+* Better error handling with tweet data
+* Support to favorite tweets
 
 == Installation ==
 

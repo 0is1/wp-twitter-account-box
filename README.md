@@ -22,6 +22,10 @@ This plugin works already. But there's still things TODO:
 * Test with different WP-versions
 * Add Stylus/SASS/LESS support
 
+### Next version: 0.3.0
+* Better error handling with tweet data
+* Support to favorite tweets
+
 ## Twitter Account Box uses and thank
 
 * [twitter-api-php](https://github.com/J7mbo/twitter-api-php)
