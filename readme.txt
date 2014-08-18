@@ -69,7 +69,7 @@ Thanks!
 
 == Changelog ==
 
-= 0.2.9 =
+= 0.2.9.1 =
 
 * Enable tweets
 * Add some styles
