@@ -3,7 +3,23 @@
 Plugin that adds your Twitter account details box in your Wordpress site via widget.
 
 ### See plugin in [WordPress Plugin Directory](http://wordpress.org/plugins/twitter-account-box/)
-## Work in progress... but it's working!
+
+## Development
+* There's Gruntfile that watches changes in .styl and .js files from /src
+* Install node_modules
+```
+npm install
+```
+* Start grunt
+```
+grunt
+```
+* Build and minify
+```
+grunt build
+```
+
+## This is work in progress... but it's working!
 
 * Like this:
 * ![Image](public/images/twitteraccountbox-example.png?raw=true)
@@ -20,10 +36,11 @@ This plugin works already. But there's still things TODO:
 * Better error handling
 * Documentation
 * Test with different WP-versions
-* Add Stylus/SASS/LESS support
 
 ### Next version: 0.3.0
 * Better error handling with tweet data
+
+### Version: 0.4.0
 * Support to favorite tweets
 
 ## Twitter Account Box uses and thank
