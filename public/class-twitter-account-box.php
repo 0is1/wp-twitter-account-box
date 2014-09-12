@@ -115,15 +115,15 @@ if ( ! class_exists( 'TwitterAccountBox' ) ) {
      * @since    0.1.0
      */
     public function enqueue_scripts() {
-      // wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'js/twitter.js', __FILE__ ), array(), TAB__VERSION, true );
+      wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'js/twitter-account-box.min.js', __FILE__ ), array(), TAB__VERSION, true );
     }
     /**
-     * Register and enqueue public-facing Twitter API JavaScript files.
+     * Register and enqueue public-facing Vendor JavaScript files.
      *
      * @since    0.1.0
      */
     public function enqueue_vendor_scripts() {
-      wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'js/twitter.js', __FILE__ ), array(), TAB__VERSION, true );
+      // wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'js/TODO.min.js', __FILE__ ), array(), TAB__VERSION, true );
     }
 
   }
