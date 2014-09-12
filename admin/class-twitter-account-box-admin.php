@@ -144,6 +144,7 @@ if ( ! class_exists( 'TwitterAccountBoxAdmin' ) ) {
       }
       if ( isset( $_GET['settings-updated'] ) ) {
         if ('true' === $_GET['settings-updated']){
+          // TODO only update data if options that require updating data have changed
           self::init_twitter_data();
         }
       }
@@ -167,7 +168,7 @@ if ( ! class_exists( 'TwitterAccountBoxAdmin' ) ) {
             </div>
             <div class="wrap pure-control-group">
               <label for="twitteraccountbox_options[consumer_secret]"><?php _e( 'Twitter API Secret:', $this->plugin_slug );?></label>
-              <input type="text" name="twitteraccountbox_options[consumer_secret]" value="<?php echo self::get_input_value('consumer_secret');?>" required />
+              <input type="password" name="twitteraccountbox_options[consumer_secret]" value="<?php echo self::get_input_value('consumer_secret');?>" required />
             </div>
             <div class="wrap pure-control-group">
               <label for="twitteraccountbox_options[oauth_access_token]"><?php _e( 'Access Token:', $this->plugin_slug );?></label>
@@ -175,7 +176,7 @@ if ( ! class_exists( 'TwitterAccountBoxAdmin' ) ) {
             </div>
             <div class="wrap pure-control-group">
               <label for="twitteraccountbox_options[auth_token_secret]"><?php _e( 'Access Token Secret:', $this->plugin_slug );?></label>
-              <input type="text" name="twitteraccountbox_options[oauth_token_secret]" value="<?php echo self::get_input_value('oauth_token_secret');?>" required/>
+              <input type="password" name="twitteraccountbox_options[oauth_token_secret]" value="<?php echo self::get_input_value('oauth_token_secret');?>" required/>
             </div>
             <div class="wrap pure-control-group">
               <label for="twitteraccountbox_options[twitter_username]"><?php _e( 'Twitter username:', $this->plugin_slug );?></label>
