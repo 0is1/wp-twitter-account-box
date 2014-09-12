@@ -1,0 +1,127 @@
+@import 'colors'
+
+#twitteraccountbox
+  background-color tabBgColor
+  border 1px solid tabBorderColor
+  border 1px solid tabBorderColorAlpha
+  border-radius 2px
+  font-size 100%
+  max-width 550px
+  a
+    text-decoration none
+  ul
+    li
+      background-image none
+      list-style none
+  .twitteraccountbox-error
+    background-color almostWhite
+    color rgb(200, 50, 50)
+    padding 1rem
+  .in-twitter
+    background-color almostWhite
+    border-bottom 1px solid blackAlpha
+    padding 0.5rem
+    p
+      font-size 80%
+      font-weight 600
+      margin 0
+  .twitter-user-description, .twitter-user-location
+    font-size .85rem
+    margin 0 0 .5rem
+    text-align center
+  .twitter-user-details
+    background-position center
+    background-size cover
+    color #fff
+    padding .75rem
+    position relative
+    text-align center
+    text-shadow 1px 1px 1px #141414
+    h1, a
+      color almostWhite
+      line-height 1
+      margin .5rem 0
+    h1
+      font-size 1.25rem
+    a
+      &:hover
+        text-decoration underline
+    .twitteraccountbox-img
+      float none
+      display block
+      height auto
+      margin 0 auto
+      width auto
+      img
+        border 2px solid littleGrayish
+  .twitteraccountbox-details
+    font-size 85%
+    padding .2rem 0
+    ul
+      padding 0
+    ul, li
+      display inline-block
+      margin 0
+    li
+      border-left 1px solid littleGrayish
+      line-height 1.5
+      padding .25em .75em
+      &:first-of-type
+        border-left none
+        padding .25em .75em
+      span
+        display block
+        font-size 80%
+        text-transform uppercase
+      a
+        color darkGray
+      &:hover
+        a
+          color hoverColor
+    .follow-button
+      float right
+      display inline-block
+      margin 4px 4px 0
+  .twitteraccountbox-img
+    display inline-block
+    height 24px
+    margin 0
+    width 24px
+  .twitter-logo
+    float left
+    height 15px
+    margin 0.2rem .75rem 0 0
+    width 15px
+  .tab-icon-twitter
+    color twitterLogoColor
+  .tab-icon-retweet
+    color twitterRetweetColor
+  .twitteraccountbox-tweets
+    border-top 1px solid tabBorderColor
+    border-top 1px solid tabBorderColorAlpha
+    padding .5rem
+  .twitteraccountbox-tweet
+    border-top 1px solid tabBorderColor
+    border-top 1px solid tabBorderColorAlpha
+    padding 1rem .5rem
+    &:first-of-type
+      border none
+    p
+      margin-bottom 0
+    a
+      display inline
+  .twitteraccountbox-tweet-by
+    font-size 90%
+  .retweet
+    &:after
+      content " "
+      display block
+      margin-bottom .5rem
+  .twitteraccountbox-tweet-username
+    font-weight 600
+
+
+@media only screen and (min-device-width:320px) and (max-device-width:480px)
+  #twitteraccountbox .twitteraccountbox-details .follow-button
+    float none
+
