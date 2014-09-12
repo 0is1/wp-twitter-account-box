@@ -177,12 +177,12 @@ if ( ! class_exists( 'CreateTwitterAccountBox' ) ) {
               // Retweet
               if($value['retweeted']): ?>
                 <div class="twitteraccountbox-tweet">
-                  <span class="twitteraccountbox-tweet-retweeded-by">
+                  <span class="twitteraccountbox-tweet-by retweet">
                     <i class="tab-icon-retweet"></i>
                     <?php _e('Retweeded by', $this->plugin_slug);?>
                     <?php echo self::$twitter_data['twitter_user_real_name'];?>
                   </span>
-                    <figure class="twitteraccountbox-tweet-retweet-user-image">
+                    <figure class="twitteraccountbox-img">
                       <img src="<?php echo $value['retweeted_status']['user']['profile_image_url']?>" title="@<?php echo $value['retweeted_status']['user']['screen_name'];?>" alt="@<?php echo $value['retweeted_status']['user']['screen_name'];?>">
                     </figure>
                   <span class="twitteraccountbox-tweet-retweet-by">
