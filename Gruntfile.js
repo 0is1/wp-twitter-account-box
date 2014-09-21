@@ -27,7 +27,7 @@ module.exports = function(grunt) {
       js: [
         'src/*.js'
       ],
-      styles:{
+      styles: {
         description: "Styles for Twitter Account Box WP-plugin"
       }
     },
@@ -39,17 +39,17 @@ module.exports = function(grunt) {
      */
     tag: {
       banner: '/*!\n' +
-              ' * <%= pkg.name %>\n' +
-              ' * <%= pkg.url %>\n' +
-              ' * @author <%= pkg.author %>\n' +
-              ' * Copyright <%= pkg.copyright %>. <%= pkg.license %> licensed.\n' +
-              ' */\n',
-      css:    '/*\n' +
-              ' * Description: <%= project.styles.description %>\n' +
-              ' * Plugin site: <%= pkg.url %>\n' +
-              ' * Author: <%= pkg.author %>\n' +
-              ' * Copyright <%= pkg.copyright %>. <%= pkg.license %>licensed.' +
-              ' */\n\n'
+        ' * <%= pkg.name %>\n' +
+        ' * <%= pkg.url %>\n' +
+        ' * @author <%= pkg.author %>\n' +
+        ' * Copyright <%= pkg.copyright %>. <%= pkg.license %> licensed.\n' +
+        ' */\n',
+      css: '/*\n' +
+        ' * Description: <%= project.styles.description %>\n' +
+        ' * Plugin site: <%= pkg.url %>\n' +
+        ' * Author: <%= pkg.author %>\n' +
+        ' * Copyright <%= pkg.copyright %>. <%= pkg.license %> licensed.' +
+        ' */\n\n'
     },
     /**
      * Concatenate JavaScript files
@@ -116,8 +116,7 @@ module.exports = function(grunt) {
       concat: {
         files: '<%= project.src %>/{,*/}*.js',
         tasks: ['concat:dev']
-      }
-      ,
+      },
       stylus: {
         files: '<%= project.src %>/master.styl',
         tasks: ['stylus:compile_dev']
