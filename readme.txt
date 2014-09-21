@@ -4,7 +4,7 @@ Contributors: 0is1
 Tags: Twitter, Social Media, widget
 Requires at least: 3.9.0
 Tested up to: 4.0
-Stable tag: 0.2.10
+Stable tag: 0.2.11
 License: GPLv2 or later
 
 
@@ -73,6 +73,10 @@ Please tell about it: janne [AT] jannejuhani.net
 Thanks!
 
 == Changelog ==
+
+= 0.2.11 =
+
+* Add small style fixes
 
 = 0.2.10 =
 
