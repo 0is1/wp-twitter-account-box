@@ -79,7 +79,7 @@ if ( ! class_exists( 'TwitterAccountBox' ) ) {
       }
     }
     /**
-     * Removes all connection options
+     * TODO
      * @static
      */
     public static function plugin_deactivation( ) {

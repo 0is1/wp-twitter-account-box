@@ -78,8 +78,9 @@ module.exports = function(grunt) {
         banner: '<%= tag.banner %>'
       },
       build: {
-        src: '<%= project.src %>/twitter-account-box.js',
-        dest: 'public/js/twitter-account-box.min.js'
+        files: {
+          'public/js/twitter-account-box.min.js': '<%= project.src %>/twitter-account-box.js'
+        }
       }
     },
     stylus: {
@@ -123,11 +124,6 @@ module.exports = function(grunt) {
       }
     }
   });
-
-  // Load the plugin that provides the "uglify" task.
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  // Load the plugin that provides the "stylus" task.
-  grunt.loadNpmTasks('grunt-contrib-stylus');
 
   /**
    * Default task

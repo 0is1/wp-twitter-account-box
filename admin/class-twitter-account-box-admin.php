@@ -27,7 +27,7 @@ if ( ! class_exists( 'TwitterAccountBoxAdmin' ) ) {
     protected $plugin_screen_hook_suffix = null;
 
     /**
-     * Slug of the plugin screen.
+     * TAB options
      *
      * @since    1.0.0
      *
@@ -99,8 +99,6 @@ if ( ! class_exists( 'TwitterAccountBoxAdmin' ) ) {
         }
       } else $input_validated[ 'twitter_number_of_tweets' ] = 3; // Default
 
-
-
       self::delete_tab_transients();
       return $input_validated;
 
@@ -161,7 +159,7 @@ if ( ! class_exists( 'TwitterAccountBoxAdmin' ) ) {
             <section class="tab-twitter-info">
               <p><a href="<?php echo TAB__TWITTER_DEV_SITE;?>"><?php _e('Get Twitter Developer-account', $this->plugin_slug); ?></a></p>
             </section>
-            <h3><?php _e( 'Twitter options', 'twitteraccountbox' );?></h3>
+            <h3><?php _e( 'Twitter options', $this->plugin_slug );?></h3>
             <div class="wrap pure-control-group">
               <label for="twitteraccountbox_options[consumer_key]"><?php _e( 'Twitter API Key:', $this->plugin_slug );?></label>
               <input type="text" name="twitteraccountbox_options[consumer_key]" value="<?php echo self::get_input_value('consumer_key');?>" required />
