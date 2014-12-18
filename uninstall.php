@@ -14,5 +14,13 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
   exit;
 }
 
+/**
+ * Delete transients and options.
+ *
+ * @since 0.1.0
+ */
+
 delete_transient( 'twitteraccountbox_transient' );
-delete_option('twitteraccountbox_options');
+delete_option( 'twitteraccountbox_options' );
+
+?>
