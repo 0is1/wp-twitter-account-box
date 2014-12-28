@@ -1,3 +1,4 @@
 .DS_Store
 public/images/originals
 node_modules/
+*.sublime-workspace
