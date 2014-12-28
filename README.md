@@ -30,7 +30,7 @@ This plugin works already. But there's still things TODO:
 * Figure out if it's possible to check if user already follows the account and show "Following"-button instead of "Follow"-button
   * Maybe [GET friendships/exists](https://dev.twitter.com/docs/api/1/get/friendships/exists)
 * Style Tweet button and load Twitter images locally if user is using any "anti social media"-plugin in browser
-* Enable shortcodes
+* ~~Enable shortcodes~~
 * Style admin panel options-page
 * Make TAB more responsive
 * Better error handling
