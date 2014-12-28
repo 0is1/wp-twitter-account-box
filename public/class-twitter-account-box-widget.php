@@ -17,12 +17,16 @@ if ( ! class_exists( 'TwitterAccountBoxWidget' ) ) {
         __( 'Twitter Account Box Widget' , 'twitteraccountbox'),
         array( 'description' => __( 'Display your Twitter Account Box' , 'twitteraccountbox') )
       );
+
       $plugin = TwitterAccountBox::get_instance();
+
       $this->plugin_slug = $plugin->get_plugin_slug();
 
       $createTwitterAccountBox = CreateTwitterAccountBox::get_instance();
+
       $this->createTwitterAccountBox = $createTwitterAccountBox;
 
+      add_shortcode( 'twitter_account_box', array( $this, 'get_tab_contents' ) );
     }
 
     /**
@@ -70,15 +74,25 @@ if ( ! class_exists( 'TwitterAccountBoxWidget' ) ) {
         echo $args['after_title'];
       }
   ?>
-    <div id="twitteraccountbox">
     <?php
       echo $this->createTwitterAccountBox->get_tab_content();
     ?>
-    </div>
   <?php
       echo $args['after_widget'];
     }
+
+  /**
+   * Return TAB content for shortcode.
+   * @since     0.2.12
+   * @return    string    TAB html content.
+   */
+    function get_tab_contents( ) {
+      return $this->createTwitterAccountBox->get_tab_content();
+
+    }
+
   }
+
 }
 
 function tab_register_widgets() {
