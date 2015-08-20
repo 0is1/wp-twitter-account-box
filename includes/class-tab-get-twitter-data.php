@@ -36,7 +36,7 @@ if ( ! class_exists( 'TabGetTwitterData' ) ) {
      * @since    0.1.0
      * @var      array
      */
-    protected static $error = [];
+    protected static $error = array();
 
     private function __construct() {
       self::init();
@@ -96,10 +96,10 @@ if ( ! class_exists( 'TabGetTwitterData' ) ) {
         'twitter_enable_tweets' => $data['twitter_enable_tweets'],
         'twitter_number_of_tweets' => $data['twitter_number_of_tweets']
         );
-        self::$error = [
+        self::$error = array(
           'error_message' => '',
           'error' => false
-          ];
+          );
     }
 
     private static function get_twitter_data(){
@@ -125,15 +125,15 @@ if ( ! class_exists( 'TabGetTwitterData' ) ) {
       } catch (Exception $e) {
         if ($e->getMessage() === "Make sure you are passing in the correct parameters" ) {
 
-          self::$error = [
+          self::$error = array(
             'error_message' => 'Make sure you are passing in the correct parameters in Twitter Account Box settings-page',
             'error' => true
-          ];
+          );
         } else{
-          self::$error = [
+          self::$error = array(
             'error_message' => 'Something went wrong, please try again later...',
             'error' => true
-          ];
+          );
         }
         error_log(date('j.n.Y H:i:s'). " : ", 3, TAB__PLUGIN_DIR .'/logs/twitteraccountbox-errors.log');
         error_log($e.PHP_EOL, 3, TAB__PLUGIN_DIR .'/logs/twitteraccountbox-errors.log');
