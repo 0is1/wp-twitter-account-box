@@ -3,7 +3,7 @@
 Contributors: 0is1
 Tags: Twitter, Social Media, widget
 Requires at least: 3.9.0
-Tested up to: 4.1
+Tested up to: 4.3
 Stable tag: 0.2.12
 License: GPLv2 or later
 

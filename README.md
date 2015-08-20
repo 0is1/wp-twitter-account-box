@@ -52,3 +52,7 @@ This plugin works already. But there's still things TODO:
 * Or open an [issue here on GitHub](https://github.com/0is1/wp-twitter-account-box/issues)
 
 Thank you!
+
+
+#### Notes
+* https://dev.twitter.com/oauth/application-only
