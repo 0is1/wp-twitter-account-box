@@ -101,9 +101,8 @@ if ( ! class_exists( 'CreateTwitterAccountBox' ) ) {
       return "<p class='twitteraccountbox-error'>". $data['errors'][0]['message'] . "</p>";
 
     elseif ( gettype($data) !== 'NULL' && !self::$tabGetTwitterData->check_error()):
-
       // Get user Twitter profile image
-      isset( $data[0]["user"]["profile_image_url"] ) ? self::$twitter_data['twitter_user_image'] = $data[0]["user"]["profile_image_url"] : self::$twitter_data['twitter_user_image'] = TAB__PLUGIN_URL . 'public/images/empty_image.png';
+      isset( $data[0]["user"]["profile_image_url"] ) ? self::$twitter_data['twitter_user_image'] = $data[0]["user"]["profile_image_url_https"] : self::$twitter_data['twitter_user_image'] = TAB__PLUGIN_URL . 'public/images/empty_image.png';
 
       isset( $data[0]["user"]["profile_banner_url"] ) ? self::$twitter_data['twitter_profile_banner_url'] = $data[0]["user"]["profile_banner_url"] . '/web' : self::$twitter_data['twitter_profile_banner_url'] = TAB__PLUGIN_URL . 'public/images/empty_header.png';
 
