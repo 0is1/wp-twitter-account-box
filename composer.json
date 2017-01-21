@@ -1,0 +1,10 @@
+{
+    "name": "0is1/wp-twitter-account-box",
+    "version": "master",
+    "type": "wordpress-plugin",
+    "source": {
+        "url": "https://github.com/0is1/wp-twitter-account-box.git",
+        "type": "git",
+        "reference": "master"
+    }
+}
