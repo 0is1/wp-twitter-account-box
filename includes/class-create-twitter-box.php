@@ -91,6 +91,7 @@ if ( ! class_exists( 'CreateTwitterAccountBox' ) ) {
     require_once( TAB__PLUGIN_DIR . 'includes/class-tab-get-twitter-data.php' );
     self::$tabGetTwitterData = TabGetTwitterData::get_instance();
   }
+
   public function createContent(){
     $data = get_transient('twitteraccountbox_transient');
     $twitteraccountbox_data = get_option('twitteraccountbox_options');
@@ -127,6 +128,7 @@ if ( ! class_exists( 'CreateTwitterAccountBox' ) ) {
       isset( $data[0]["user"]["screen_name"] ) ? self::$twitter_data['twitter_user_nick'] = $data[0]["user"]["screen_name"] : self::$twitter_data['twitter_user_nick'] = self::$tabGetTwitterData->get_twitter_username();
 
       self::$twitter_data['twitter_user_profile_link'] = TAB__TWITTER_BASE_URL . self::$twitter_data['twitter_user_nick']; ?>
+
       <div id="twitteraccountbox">
         <section class="in-twitter header">
           <figure class="twitter-logo">
@@ -244,8 +246,8 @@ if ( ! class_exists( 'CreateTwitterAccountBox' ) ) {
               }
               ?>
           </section>
+          <?php endif; //if($twitteraccountbox_data['twitter_enable_tweets'])?>
         </div>
-        <?php endif; //if($twitteraccountbox_data['twitter_enable_tweets'])?>
     <?php else : // If Twitter data isn't available ?>
       <div class="twitteraccountbox fleft pure-u">
         <section class="twitter-feed-unavailable">
